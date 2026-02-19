@@ -39,6 +39,9 @@ exclude:
   - vendor/
   - Gemfile*
   - "*.md.backup"
+  - "*.html.backup"
+  - _data_models/
+  - _data_model_releases/
 
 # Plugins (jekyll-feed is supported by GitHub Pages and provides an RSS/Atom feed)
 plugins:
@@ -63,10 +66,6 @@ collections:
     output: true
     permalink: /articles/:title/
     displayname: "Articles"
-  data_model_releases:
-    output: true
-    permalink: /data-models/releases/:path/
-    displayname: "Data Model Releases"
   use_cases:
     output: true
     permalink: /use-cases/:title/
@@ -77,11 +76,6 @@ collections:
     permalink: /personas/:title/
     displayname: "Personas"
     # no parent_collection configured by default
-  data_models:
-    output: true
-    permalink: /data-models/:title/
-    displayname: "Data Models"
-    # top-level collection: no parent_collection
   agents:
     output: true
     permalink: /agents/:title/
@@ -112,17 +106,6 @@ defaults:
       requires: []
       use_cases: []
       personas: []
-      data_models: []
-  - scope:
-      type: data_models
-    values:
-      layout: data_model
-      parent: "Data Models"
-      thumbnail: "/assets/data-models/default.png"
-      latest_release: ""
-      requires: []
-      use_cases: []
-      personas: []
   - scope:
       type: agents
     values:
@@ -143,12 +126,6 @@ defaults:
       requires: []
       use_cases: []
       personas: []
-  - scope:
-      type: data_model_releases
-    values:
-      layout: release
-      thumbnail: "/assets/data-models/default.png"
-      parent_collection: data_models
   - scope:
       type: app_releases
     values:
@@ -172,14 +149,6 @@ defaults:
     values:
       layout: doc
       parent_collection: app_starter_kits
-  
-  # Data model docs
-  - scope:
-      type: docs
-      path: "_docs/data-models/**"
-    values:
-      layout: doc
-      parent_collection: data_models
   
   # Portal docs
   - scope:
@@ -208,7 +177,6 @@ defaults:
       type: tables
     values:
       layout: table
-      parent_collection: data_models
   - scope:
       path: "_posts"
     values:

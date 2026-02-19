@@ -17,6 +17,24 @@ layout: default
             {{ page.description }}
           </div>
         {% endif %}
+        
+        {%- comment -%}
+          Show the View ERD button if a mermaid code block is present in the content (from a fenced code block),
+          not just if a specific section header or div is present.
+        {%- endcomment -%}
+        {% assign mermaid_block = page.content | split:'<pre><code class="language-mermaid">' | last | split:'</code></pre>' | first %}
+        {% if mermaid_block != page.content %}
+          <p class="margin-top-2">
+            <button
+              type="button"
+              class="usa-button usa-button--primary open-erd-modal"
+              style="width: 100%"
+              data-erd-slug="{{ page.slug }}">
+              View ERD
+            </button>
+          </p>
+        {% endif %}
+        
         <nav class="sidenav-sticky" aria-label="Section navigation">
           {% include sidenav.html %}
         </nav>
@@ -43,7 +61,7 @@ layout: default
 
             {% include tabs.html
             ns=page.slug
-            tabs="Overview:overview|How-to / Guides:guides|Releases:releases"
+            tabs="Overview:overview|Data Model:erd|How-to / Guides:guides"
             %}
 
             <!-- OVERVIEW panel -->
@@ -52,10 +70,24 @@ layout: default
               {{ content }}
             </section>
 
-            <!-- RELEASES panel -->
-            <section id="panel-{{ page.slug }}-releases" class="mgat-subnav__panel usa-prose" role="tabpanel"
+            <!-- ERD panel -->
+            <section id="panel-{{ page.slug }}-erd" class="mgat-subnav__panel usa-prose" role="tabpanel"
               data-panel="{{ page.slug }}">
-              {% include app_releases.html %}
+              
+              <p>The Asset Management module is built on a comprehensive data model that tracks assets throughout their lifecycle. The Entity Relationship Diagram (ERD) below shows the key tables and their relationships:</p>
+
+              {%- comment -%}
+                Extract the first Mermaid code block from the page content (from a fenced code block),
+                and use it for both the modal and the diagram. This allows authors to use regular
+                ```mermaid fenced code blocks in markdown, with no front matter or data-raw needed.
+              {%- endcomment -%}
+              {% assign mermaid_block = content | split:'<pre><code class="language-mermaid">' | last | split:'</code></pre>' | first %}
+              {% if mermaid_block != content %}
+                <textarea id="erd-mermaid-{{ page.slug }}" style="display:none;">{{ mermaid_block | strip }}</textarea>
+              {% endif %}
+
+              <h2 class="margin-top-4">Tables</h2>
+              {% include tables.html %}
             </section>
 
             <!-- GUIDES panel -->
@@ -68,34 +100,12 @@ layout: default
           <!-- Small right column (download + personas) -->
           <div class="grid-col-12 tablet:grid-col-3">
             {% if page.latest_release %}
-              {% assign lr = page.latest_release %}
-              {% assign rel = site.app_releases | where: "parent", page.slug | where: "version", lr | first %}
-              {% assign raw_base = 'https://github.com/microsoft/gov-apptemplates/raw/main/' %}
-
-              {% if rel and rel.custom_release_file %}
-                <a class="usa-button" href="{{ rel.custom_release_file }}" download>Download Latest Release ({{ rel.version }})</a>
-
-              {% elsif rel and rel.release_file %}
-                {% assign rf = rel.release_file | default: "" | strip %}
-                {% if rf != "" %}
-                  {% assign rf_prefix = rf | slice: 0,6 %}
-                  {% if rf_prefix == "MS-Gov" %}
-                    {% assign module_path = rel.module_type | default: "modules" %}
-                    <a class="usa-button" href="{{ raw_base }}{{ module_path }}/{{ rel.parent }}/releases/{{ rel.release_file }}" download>Download Latest Release ({{ rel.version }})</a>
-                  {% else %}
-                    {% assign module_path = rel.module_type | default: "federal" %}
-                    <a class="usa-button" href="{{ raw_base }}{{ module_path }}/{{ rel.parent }}/releases/{{ rel.version }}/{{ rel.release_file }}" download>Download Latest Release ({{ rel.version }})</a>
-                  {% endif %}
-                {% else %}
-                  {% assign module_path = rel.module_type | default: "federal" %}
-                  <a class="usa-button" href="{{ raw_base }}{{ module_path }}/{{ rel.parent }}/releases/{{ rel.version }}/{{ rel.release_file }}" download>Download Latest Release ({{ rel.version }})</a>
-                {% endif %}
-
+              {% if page.release_url %}
+                <a class="usa-button" href="{{ page.release_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% else %}
-                <div></div>
+                {% assign raw_base = 'https://github.com/microsoft/gov-apptemplates/raw/main/' %}
+                <a class="usa-button" href="{{ raw_base }}modules/{{ page.slug }}/releases/{{ page.latest_release }}/MS-Gov-{{ page.slug | capitalize }}-{{ page.latest_release }}.zip" download>Download Latest Release ({{ page.latest_release }})</a>
               {% endif %}
-            {% else %}
-              <div></div>
             {% endif %}
 
             {% if page.credits %}
@@ -123,3 +133,19 @@ layout: default
       </main>
     </div>
 </section>
+
+{% comment %} ERD modal (injected per-page) {% endcomment %}
+<div id="erd-modal-{{ page.slug }}" class="erd-modal" aria-hidden="true" role="dialog" aria-labelledby="erd-modal-title-{{ page.slug }}" tabindex="-1">
+  <div class="erd-modal__backdrop" data-close="true"></div>
+  <div class="erd-modal__dialog" role="document">
+    <header class="erd-modal__header">
+      <h2 id="erd-modal-title-{{ page.slug }}">ERD — {{ page.title }}</h2>
+      <button class="erd-modal__close" aria-label="Close ERD" data-close="true">&times;</button>
+    </header>
+    <div class="erd-modal__content">
+      <div class="erd-modal__inner">Loading…</div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/erd-modal.js' | relative_url }}" defer></script>

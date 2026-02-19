@@ -2,6 +2,7 @@
 title: "Asset Management"
 description: "Track, categorize, and manage government assets with a modern, reusable solution for accountability and lifecycle management."
 latest_release: v1.2.0.0
+# release_url: "https://github.com/microsoft/gov-apptemplates/raw/main/modules/asset-management/releases/v1.2.0.0/custom-file.zip"
 thumbnail: /assets/use_cases/asset-management.png
 required_app_starter_kits:
  - core
@@ -35,3 +36,27 @@ By bringing together assets, categories, ownership, locations, and service histo
 
 Sample data is available for this module here - [Asset Management Sample Data](https://github.com/microsoft/gov-apptemplates/tree/main/modules/asset-management/sample-data){:target="_blank" rel="noopener noreferrer"}.
 
+```mermaid
+graph TD
+  Account(Account)
+  Contact(Person)
+  govcdm_Asset(Asset)
+  govcdm_assetcategory(Asset Category)
+  govcdm_AssetOwner(Asset Owner)
+  govcdm_AssetServiceRecord(Asset Service Record)
+  govcdm_Location(Location)
+  govcdm_Product(Product)
+  govcdm_OrganizationUnit(Organization Unit)
+  govcdm_AssetOwner --> Contact
+  govcdm_Asset --> govcdm_Asset
+  govcdm_AssetOwner --> govcdm_Asset
+  govcdm_AssetServiceRecord --> govcdm_Asset
+  govcdm_Asset --> govcdm_assetcategory
+  govcdm_assetcategory --> govcdm_assetcategory
+  govcdm_Asset --> govcdm_AssetOwner
+  govcdm_AssetServiceRecord --> govcdm_Location
+  govcdm_Asset --> govcdm_Location
+  govcdm_Asset --> govcdm_OrganizationUnit
+  govcdm_Asset --> govcdm_Product
+
+```
