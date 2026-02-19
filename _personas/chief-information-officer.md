@@ -12,13 +12,13 @@ A Chief Information Officer (CIO) is the senior executive responsible for the st
 
 ## Major Responsibilities
 
-* **Strategic Leadership:** Define the agency’s IT vision and roadmap in alignment with organizational goals, policy directives, and federal/state IT mandates.
-* **Governance & Compliance:** Oversee IT policies, standards, and enterprise architecture; ensure compliance with cybersecurity requirements (e.g., FISMA, FedRAMP) and records management laws.
+* **Strategic Leadership:** Define the organization's IT vision and roadmap in alignment with organizational goals, policy directives, and industry and regulatory mandates.
+* **Governance & Compliance:** Oversee IT policies, standards, and enterprise architecture; ensure compliance with cybersecurity requirements and industry-specific regulations (e.g., HIPAA, SOX, GDPR) and records management laws.
 * **Cybersecurity & Risk Management:** Safeguard systems and data from cyber threats, maintain resilience, and coordinate incident response with security officers.
 * **Program & Project Oversight:** Direct large-scale system implementations, modernization efforts, and IT portfolio management to balance cost, performance, and mission value.
 * **Data & Analytics:** Promote data governance, open data initiatives, and use of advanced analytics/AI to improve decision-making and service delivery.
 * **Vendor & Contract Management:** Oversee IT procurements, negotiate vendor agreements, and manage contracts for enterprise systems and cloud services.
-* **Workforce & Culture:** Develop the agency’s digital workforce, champion user-centered design, and promote equity and accessibility in digital services.
+* **Workforce & Culture:** Develop the organization's digital workforce, champion user-centered design, and promote equity and accessibility in digital services.
 
 ## Key Concerns
 
@@ -27,16 +27,16 @@ A Chief Information Officer (CIO) is the senior executive responsible for the st
 * Navigating **regulatory compliance** and evolving policy directives.
 * Balancing **innovation vs. risk**, particularly in AI, cloud, and shared services.
 * Maintaining **interoperability** and avoiding siloed solutions.
-* Delivering **accessible, equitable services** to the public.
+* Delivering **accessible, equitable services** to customers and stakeholders.
 
 ## Typical Line of Business Applications (interacted with throughout the week)
 
 * **Enterprise Resource Planning (ERP):** Finance, procurement, HR, payroll.
-* **Case & Records Management:** Citizen services, benefits, licensing, regulatory compliance.
+* **Case & Records Management:** Client services, customer relationship management, licensing, regulatory compliance.
 * **Cybersecurity & Monitoring Tools:** Security information and event management (SIEM), vulnerability management, identity/access control.
 * **Collaboration & Productivity Platforms:** Email, document management, knowledge bases, virtual meeting tools.
-* **Data & Analytics Platforms:** Business intelligence dashboards, open data portals, GIS/mapping systems.
-* **Project & Portfolio Management Tools:** For tracking major IT investments and reporting to oversight bodies (OMB, legislatures, inspectors general).
+* **Data & Analytics Platforms:** Business intelligence dashboards, data portals, GIS/mapping systems.
+* **Project & Portfolio Management Tools:** For tracking major IT investments and reporting to executive leadership and board oversight.
 * **Service Management Platforms:** Help desk, ITIL workflows, ticketing for support operations.
 
 

@@ -14,13 +14,13 @@ Executive Coordination refers to the structured management of high-level directi
 
 ## Where Executive Coordination is used
 
-Common domains and agency types:
+Common domains and organizational contexts:
 
-- Executive offices and agency leadership teams
+- Executive offices and organizational leadership teams
 - Program management offices
 - Legal, compliance, and policy divisions
-- Interagency and cross-governmental initiatives
-- Emergency management and crisis response
+- Cross-organizational and partnership initiatives
+- Crisis management and business continuity
 - Strategic planning and performance management
 
 ## High level processes
@@ -63,4 +63,4 @@ Typical steps and interacting personas:
 - Audit pass rates and reduction in compliance findings.
 - User satisfaction with coordination and tracking processes.
 - Number of actions with documented legal authority, risk assessment, and outcome evaluation.
-- Improved cross-unit and cross-agency collaboration on executive priorities.
+- Improved cross-unit and cross-organizational collaboration on executive priorities.

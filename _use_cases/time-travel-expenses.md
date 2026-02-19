@@ -14,13 +14,13 @@ Time, Travel, and Expense (TTE) Management encompasses the processes and systems
 
 ## Where Time, Travel, and Expense Management is used
 
-Common domains and agency types:
+Common domains and organizational contexts:
 
-- All organizations with employees, contractors, or grant recipients
-- Departments with frequent travel (field operations, inspections, training)
+- All organizations with employees, contractors, or service providers
+- Departments with frequent travel (field operations, client services, training)
+- Professional services, consulting, and project-based organizations
 - Research, education, and grant-funded programs
-- Emergency response and public safety organizations
-- Administrative and support services
+- Sales, support, and field service operations
 
 ## High level processes
 

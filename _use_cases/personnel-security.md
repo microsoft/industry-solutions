@@ -14,13 +14,13 @@ Personnel Security covers the policies, processes, and technical controls that e
 
 ## Where Personnel Security is used
 
-Common agency contexts and domains:
+Common organizational contexts and domains:
 
-- Defense, intelligence, and national security organizations.  
-- Law enforcement and public safety agencies.  
-- Civilian agencies handling sensitive personally identifiable information (PII), health, or financial data.  
-- Agencies that manage contractor workforces or grant-funded programs.  
-- IT and operations teams responsible for privileged accounts and critical infrastructure.
+- Organizations with security clearance requirements (defense, intelligence, national security).
+- Financial services, healthcare, and critical infrastructure sectors.
+- Organizations handling sensitive personally identifiable information (PII), health, or financial data.
+- Organizations that manage contractor workforces or regulated access programs.
+- IT and operations teams responsible for privileged accounts and critical systems.
 
 ## High level processes
 
@@ -56,7 +56,7 @@ Outline of major processes and interacting personas:
 
 ## Common needs and challenges
 
-Typical requirements and pain points for agencies:
+Typical requirements and pain points for organizations:
 
 - Reliable integration between HR systems (HRIS) and identity/access management to support rapid, auditable provisioning and deprovisioning.  
 - Automation to enforce least privilege and reduce manual errors for high-volume onboarding and contractor lifecycles.  
@@ -68,7 +68,7 @@ Typical requirements and pain points for agencies:
 
 ## Success measures
 
-Measurable outcomes and KPIs agencies use to evaluate personnel security:
+Measurable outcomes and KPIs organizations use to evaluate personnel security:
 
 - Mean time to provision compliant access for new hires and contractors.  
 - Mean time to deprovision after termination or role change.  

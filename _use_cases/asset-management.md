@@ -14,15 +14,15 @@ Asset Management refers to the systematic process of acquiring, tracking, mainta
 
 ## Where Asset Management is used
 
-Common domains and agency types:
+Common domains and organizational contexts:
 
-- Public works and infrastructure management
+- Infrastructure and facilities management
 - IT and technology operations
-- Emergency management and public safety
+- Healthcare and medical equipment
+- Manufacturing and industrial equipment
 - Education and research institutions
-- Health and human services
 - Transportation and fleet management
-- Facilities and property management
+- Financial services and retail operations
 
 ## High level processes
 

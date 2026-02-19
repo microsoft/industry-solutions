@@ -1,11 +1,11 @@
 ---
 title: HR Administrator
-description: Manages the employee lifecycle and HR operations for an agency
+description: Manages the employee lifecycle and HR operations for an organization
 layout: persona
 thumbnail: /assets/personas/hr-admin.png
 ---
 
-A HR Administrator is responsible for day-to-day human resources operations that support an agency's workforce. They ensure accurate personnel records, timely onboarding and offboarding, benefits and payroll administration, and that HR processes comply with applicable laws and policies.
+A HR Administrator is responsible for day-to-day human resources operations that support an organization's workforce. They ensure accurate personnel records, timely onboarding and offboarding, benefits and payroll administration, and that HR processes comply with applicable laws and policies.
 
 ## Major Responsibilities
 
@@ -13,9 +13,9 @@ A HR Administrator is responsible for day-to-day human resources operations that
 * **Personnel Records & HRIS:** Maintain accurate employee records, update HRIS data, manage position descriptions, and ensure correct classification and pay-grade assignments.
 * **Benefits & Payroll Coordination:** Administer benefits enrollment, leave tracking, and coordinate with payroll teams to ensure accurate and timely compensation.
 * **Recruitment & Applicant Tracking:** Support requisitions, coordinate interviews, and maintain applicant records in ATS platforms.
-* **Time & Leave Management:** Track timekeeping, leave requests, and approvals in accordance with agency policies and legal requirements.
+* **Time & Leave Management:** Track timekeeping, leave requests, and approvals in accordance with organizational policies and legal requirements.
 * **Training & Performance Administration:** Help manage training assignments, performance review cycles, and maintain training/compliance records.
-* **Compliance & Reporting:** Produce required reports, support audits, and ensure HR practices meet regulatory requirements (e.g., EEO, FMLA, record retention).
+* **Compliance & Reporting:** Produce required reports, support audits, and ensure HR practices meet regulatory requirements (e.g., employment law, data protection, record retention).
 * **Employee Relations & Case Management:** Record and manage HR cases such as grievances, disciplinary actions, and investigations, coordinating with legal or security teams as needed.
 
 ## Key Concerns

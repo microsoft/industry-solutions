@@ -17,17 +17,18 @@ Common domains and program types (non‑exhaustive):
 
 - Human and social services (child welfare, adult protective services, income support, case‑managed programs)
 - Health and behavioral health care coordination and longitudinal care programs
-- Public safety and justice workflows (investigations, probation, victim services)
-- Licensing, permitting, and regulatory enforcement cases
-- Workforce development, unemployment services, and veterans’ programs
-- Immigration, asylum, legal aid, and court‑adjacent casework
+- Customer service and client relationship management (complex inquiries, escalations, multi-touch cases)
+- Insurance claims processing and investigation
+- Legal services, compliance, and regulatory enforcement cases
+- Workforce development and training programs
+- Financial services (loan processing, dispute resolution, fraud investigation)
 - Any program requiring multi‑party coordination, evidence collection, lifecycle tracking, and auditability
 
 ## High level processes
 
 Typical high‑level steps in a case lifecycle and the primary personas involved:
 
-1. Intake & registration — Personas: citizen/portal, intake clerk
+1. Intake & registration — Personas: client/portal, intake clerk
    - Capture identity, contact info, initial documents; create the case record and run basic validations/eligibility checks.
 
 2. Triage & prioritization — Personas: triage officer, supervisor
@@ -43,7 +44,7 @@ Typical high‑level steps in a case lifecycle and the primary personas involved
    - Update case timeline, track progress vs plan, adjust as needed.
 
 6. Escalation & investigation — Personas: investigator, legal, supervisor
-   - Manage incidents, investigations, legal holds and inter‑agency escalations.
+   - Manage incidents, investigations, legal holds and inter-organizational escalations.
 
 7. Decisioning & notification — Personas: authorized decision maker, caseworker
    - Record determinations (benefits, enforcement, disposition), notify affected parties, record appeals.
@@ -58,7 +59,7 @@ Core data model elements to support the lifecycle: Case, Person/Party, Program/E
 
 ## Common needs and challenges
 
-- Interoperability with legacy systems and partner agencies (use open APIs and domain standards where applicable).
+- Interoperability with legacy systems and partner organizations (use open APIs and domain standards where applicable).
 - Accurate identity resolution and deduplication across systems.
 - Strong privacy and security controls (RBAC, encryption, retention policies, audit logs; HIPAA/CJIS awareness where relevant).
 - Configurable workflows and business rules to accommodate program changes without heavy code changes.

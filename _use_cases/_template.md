@@ -12,14 +12,14 @@ Please complete the sections in this template for this article on the USECASE us
 
 ## Overview
 
-A plain-language summary of the use case, specific to governemnt agencies.  
+A plain-language summary of the use case, specific to organizations.  
 
 - What mission scenario it covers.  
 - Why this use case is important in organizational operations.  
 
 ## Where <Use Case> is used
 
-Types of agencies or domains where this use case commonly appears (do not list specific agency names).  
+Types of organizations or domains where this use case commonly appears (do not list specific organization names).  
 
 ## High level processes
 
@@ -39,7 +39,7 @@ Typical requirements and pain points.
 
 ## Success measures
 
-Ways agencies measure outcomes:  
+Ways organizations measure outcomes:  
 
  - Reduced...
  - Increased... 
