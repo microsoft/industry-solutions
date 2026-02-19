@@ -1,11 +1,11 @@
-title: GLOWS (Government Low-code Open-source Workforce Solutions)
-first: Government Low Code, Open Source Solutions
-description: MIT Open-source solutions for Power Platform and Dynamics 365
+title: FAST - Industry Solutions
+first: FAST Modules for Power Platform
+description: MIT Open-source industry solutions for Power Platform and Dynamics 365
 logo: /assets/logo.png
 
 # If this is a project site (https://username.github.io/repo), set baseurl to "/repo"
 url: "https://microsoft.github.io"   # host only, no trailing slash
-baseurl: "/gov-solutions"             # MUST start with a slash; repo name
+baseurl: "/industry-solutions"             # MUST start with a slash; repo name
 repository: "microsoft/gov-solutions" # (nice to have for jekyll-github-metadata)
 
 # Keep Markdown simple; we’re not using plugins that Pages doesn’t support

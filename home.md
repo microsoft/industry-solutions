@@ -5,36 +5,42 @@ title: Home
 
 # Welcome
 
-This repository is an open-source ecosystem for building government applications on **Microsoft Power Platform** and **Dynamics 365**. It provides reusable building blocks - standardized data models and modular starter apps - that help agencies deliver mission-focused solutions more quickly and with greater consistency.
+Welcome to **FAST** — an open-source ecosystem for building enterprise applications on **Microsoft Power Platform** and **Dynamics 365**.
 
-This documentation site serves as the hub that brings the two core repositories together into a single experience:
+**FAST** provides reusable, modular building blocks that help organizations deliver solutions more quickly and with greater consistency. Each module includes standardized data models, prebuilt applications, comprehensive documentation, and release packages — all available under the MIT license.
 
-* The **[Government Data Models](https://github.com/microsoft/gov-datamodels){:target="_blank" rel="noopener noreferrer"}** define standardized Dataverse schemas for common government business processes, ensuring interoperability and consistency across agencies and solutions. No forms or other UI elements are defined within these solutions.
-* The **[Government App Starter Kits](https://github.com/microsoft/gov-apptemplates){:target="_blank" rel="noopener noreferrer"}** provide prebuilt, modular applications built on those data models, offering a jump start for services such as permitting, case management, asset tracking, and grants management. These built upon the data model solutions to provide the user interface and other functionality.
+The **[FAST Modules Repository](https://github.com/microsoft/industry-apps){:target="_blank" rel="noopener noreferrer"}** contains the source code, releases, and contribution guidelines. This site serves as the documentation hub for the repository.
 
-Here you’ll find quickstarts, domain use cases, personas, release notes, and architecture guidance that connect the two repositories into an end-to-end path. Whether you’re an implementer, industry partner, or hackathon participant, Gov Solutions gives you the tools to move from evaluation to deployment with confidence.
+Whether you're in public sector, healthcare, education, manufacturing, or any other industry, **FAST** gives you a proven foundation to accelerate solution delivery while maintaining flexibility to tailor applications to your specific needs.
 
-## 🎯 Your Choice: Clean Separate of Data Models and App Starter Kits
+## 🎯 Modular, Flexible, Industry-Ready
 
-The Data Models and App Starter Kits in this repository are designed to work together as a modular, layered foundation for building government solutions on Microsoft Dataverse and the Power Platform.
+**FAST** is designed as a layered, composable foundation that works across industries:
 
-- [**Data Models**](/data-models.html) provide the standardized, reusable data models — entities, relationships, and field specifications — that define the structure and semantics of common government business processes.
+- **The [Modules]({{ '/modules/' | relative_url }}) area** provides complete, ready-to-deploy solutions with data models, forms, views, dashboards, automation, and business logic for common business processes like asset management, case tracking, project management, and more.
 
-- [**App Starter Kits**](/app-starter-kits.html) provide the ready-to-deploy applications built on top of those models, delivering preconfigured forms, views, dashboards, automation, and business logic.
+- **Modular design** means you can deploy individual modules independently or combine them to build more comprehensive solutions.
 
-Keeping these in separate repositories offers several benefits:
+- **Standardized data models** ensure consistency and interoperability, making it easier to integrate modules with each other and with external systems.
 
-- **Clear separation of governance and reusability** – Data models can evolve under their own governance rules, without being tied to specific app release cycles.
+- **Industry-agnostic patterns** support common business processes found across sectors, with the flexibility to extend and customize for industry-specific requirements.
 
-- **Independent versioning** – You can update a data model without republishing every app, and vice versa.
+Benefits of this modular approach:
 
-- **Wider reusability** – Other apps (internal or third-party) can consume the standardized models without needing to adopt the provided app templates.
+- **Faster time to value** – Start with working solutions instead of building from scratch
+- **Lower risk** – Build on tested, documented patterns rather than reinventing common capabilities
+- **Easier maintenance** – Modular architecture means changes to one component don't cascade through the entire system
+- **Better reusability** – Share modules across different projects and teams
+- **Clearer governance** – Each module can have its own lifecycle while remaining compatible with the ecosystem
 
-- **Simpler contribution paths** – Developers can contribute to either the shared data foundation or the application layer based on their expertise.
+## 🚀 Getting Started
 
-- **Better lifecycle management** – Agencies can standardize data schemas across multiple solutions while tailoring applications to their unique mission needs.
+Explore the repository to find modules that fit your needs:
 
-By using both together, agencies get a consistent, governed data layer plus a set of deployable, mission-focused apps that can be adapted quickly and maintained over time.
+1. **Browse [Use Cases]({{ '/use-cases/' | relative_url }})** to see common business scenarios and how modules address them
+2. **Review [Personas]({{ '/personas/' | relative_url }})** to understand who will use these solutions and how
+3. **Explore [Modules]({{ '/modules/' | relative_url }})** to see available solutions, data models, and documentation
+4. **Download and deploy** the modules you need using the release packages and setup guides provided
 
 ## 🛠️ Contributing
 
@@ -67,7 +73,7 @@ The modules in this repository are provided as **reference implementations** for
 They are **not** designed to be deployed directly to a production environment without additional development, testing, and validation. Any organization planning to use these modules in production should:
 
 * Adapt and extend the solutions to meet specific business and technical requirements
-* Integrate them into the organization’s **Application Lifecycle Management (ALM)** processes
+* Integrate them into the organization's **Application Lifecycle Management (ALM)** processes
 * Perform full **security, compliance, and performance reviews**
 * Apply updates, fixes, and enhancements as needed
 
@@ -75,7 +81,7 @@ These modules are meant to accelerate solution design and reduce initial build t
 
 ## ⚖️ Support 
 
-The modules in this repository are provided **“as is”** without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+The modules in this repository are provided **"as is"** without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 As open source, these solutions are **not** official Microsoft products and are **not** covered by any Microsoft support agreement or service-level commitment. No guarantee is made regarding the accuracy, completeness, performance, or continued availability of these modules.
 

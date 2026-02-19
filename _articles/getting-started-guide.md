@@ -1,12 +1,12 @@
 ---
-title: Getting Started with GLOWS
-description: A guide to setting up your GLOWS development environment and building your first government solution
-author: Government Solutions Team
-date: 2025-10-20
+title: Getting Started with FAST
+description: A guide to setting up your FAST development environment and deploying your first module
+author: FAST Team
+date: 2026-02-19
 tags: [getting-started, setup, environment, tutorial]
 ---
 
-This guide will walk you through creating a new baseline GLOWS (Government Low-code Open-source Workforce Solutions) development environment. You'll learn how to set up the foundation components and then extend your environment with additional modules to build powerful government applications.
+This guide will walk you through setting up a **FAST** development environment and deploying your first module. You'll learn how to install the Core module foundation and then add specialized modules to build enterprise applications on Microsoft Power Platform / Dynamics 365.
 
 **Note:** This guide covers the manual setup approach. Future articles will detail automated scripting methods and synchronization with source control systems.
 
@@ -14,116 +14,158 @@ This guide will walk you through creating a new baseline GLOWS (Government Low-c
 
 Before you begin, ensure you have:
 
-- Access to a Microsoft Power Platform environment
-- System administrator privileges in your target environment
-- Basic familiarity with Power Platform concepts
-- Downloaded GLOWS solution files from the repository
+- Access to a Microsoft Power Platform or Dynamics 365 environment
+- System administrator or System Customizer privileges in your target environment
+- Basic familiarity with Dataverse concepts
+- Downloaded FAST module solution files from the [FAST Modules Repository](https://github.com/microsoft/industry-apps)
 
-## Phase 1: Prepare the Baseline Environment
+## Phase 1: Install the Core Module
 
-Follow these steps to establish your foundational GLOWS environment:
+The Core module provides the foundational components that other FAST modules depend on. Install it first in any new environment.
 
 ### Step 1: Environment Setup
+
 **Provision or select your target environment:**
-- Create a new Power Platform environment through the Power Platform Admin Center, or
+- Create a new Dataverse environment through the Power Platform Admin Center, or
 - Choose an existing development/sandbox environment
 - Ensure the environment has sufficient storage and user licenses for your needs
 
-### Step 2: Install Core Data Models
-Install the foundational managed solutions in this specific order:
+### Step 2: Install Core Module
 
-1. **[Gov CDM Core managed solution]({{ '/data-models/core/' | relative_url }})**
-   - Contains essential data models and shared components
-   - Provides the foundation for all other GLOWS modules
-   - Install first to avoid dependency issues
+1. **Download the Core module** from the [FAST Modules Repository](https://github.com/microsoft/industry-apps)
+   - Navigate to the releases section
+   - Download the latest Core module managed solution (e.g., `Core_v1.0.0.0_managed.zip`)
 
-2. **[Gov CDM Process and Tasking managed solution]({{ '/data-models/process-and-tasking/' | relative_url }})**
-   - Adds tables and fields for workflow and task management capabilities
-   - Essential for most government business processes
-   - Depends on the Core solution
+2. **Import the Core module solution**
+   - Open the [Power Platform Admin Center](https://admin.powerplatform.microsoft.com)
+   - Navigate to your target environment
+   - Select **Solutions** from the left navigation
+   - Click **Import** and select the downloaded Core module file
+   - Follow the import wizard prompts
+   - Wait for the import to complete successfully
 
-### Step 3: Install Supporting Components
-3. **[PCF IFrame Control managed solution](https://github.com/microsoft/gov-apptemplates/raw/main/cross-module/pcf-controls/releases/MS-Gov-PCF-Controls_managed%20-%201.0.0.0.zip)**
-   - Enables advanced user interface components
-   - Required for enhanced user experiences in starter kits
-   - Provides secure iframe embedding capabilities
+3. **Verify installation**
+   - Check that the Core solution appears in your solutions list
+   - Review the solution components (tables, apps, flows)
+   - Confirm no import errors or warnings
 
-### Step 4: Configure Connections
-4. **Create and configure Connections**
-   Create the following required connections for GLOWS components:
-   - **Microsoft Dataverse** - Core data storage and operations
-   - **SharePoint** - Document management and collaboration
-   - **Microsoft Teams** - Team collaboration and notifications
-   - **Office 365 Groups** - Group management and permissions
-   - **Standard approvals** - Workflow approval processes
-   - **Word Online (Business)** - Document creation and editing
-   - **Office 365 Outlook** - Email integration and notifications
-   - **Content Conversion (preview)** - Document format conversion
-   - **Excel Online (Business)** - Spreadsheet integration and reporting
-   
-   Configure authentication for each connection and test connectivity before proceeding. This step only needs to be completed once in general. Future enhancements and modules may required additional Connections. Not all Connections are used by all modules, so this is primarily a time-saving step to help re-configure Power Automate flows in new environments.
+### Step 3: Configure Connections
 
-### Step 5: Deploy Application Foundations
-5. **[Core App Starter Kit]({{ '/app-starter-kits/core/' | relative_url }})**
-   - Provides fundamental application structure
-   - Includes common navigation and utility components
-   - Install before any specialized starter kits
+Create and configure the following standard connections for FAST modules:
 
-6. **[Process and Tasking App Starter Kit]({{ '/app-starter-kits/process-and-tasking/' | relative_url }})**
-   - Adds workflow management interfaces
-   - Enables task assignment and tracking capabilities
-   - Builds upon the Core App Starter Kit
+- **Microsoft Dataverse** - Core data storage and operations
+- **SharePoint** - Document management and collaboration (if using document features)
+- **Office 365 Outlook** - Email integration and notifications (if using email features)
+- **Microsoft Teams** - Team collaboration and notifications (if using Teams integration)
+
+**Note:** Not all connections are required for all modules. Configure only those connections needed by the specific modules you plan to deploy. Each module's documentation will list its required connections.
+
+### Step 4: Test the Core Module
+
+1. Open the Core module app from your environment
+2. Verify that basic navigation and functionality work correctly
+3. Confirm that core reference data (if any) is available
+4. Test any included sample data or configurations
 
 ## Phase 2: Add Specialized Modules
 
-Once your baseline environment is ready, extend it with domain-specific capabilities:
+Once your Core module is installed, you can add specialized modules based on your organization's needs.
 
 ### Step 1: Select Your Modules
-Choose from available GLOWS modules based on your organization's needs:
-- Asset Management
-- Court Case Management  
-- Event Management
-- HR Administration
-- IT Service Management
+
+Browse the [Modules]({{ '/modules/' | relative_url }}) area to explore available FAST modules:
+
+- **Asset Management** - Track and manage resources throughout their lifecycle
+- **Training and Certification** - Manage training programs and compliance
+- **Project Tracking** - Manage tasks, milestones, and deliverables
+- **Time & Expense Tracking** - Capture time entries and expenses
 - And many more...
 
-In some scenarios, you may only need to enhance one of these modules. In other scenarios you may wish to "mash up" multiple modules to build a full app.
+Each module page provides:
+- Overview and features
+- Data model diagrams
+- Download links for latest releases
+- Deployment documentation
 
-### Step 2: Install Data Model Solutions
+### Step 2: Install Additional Modules
+
 For each selected module:
-1. **Download the corresponding managed solution** from the GLOWS repository
-2. **Import the data model solution** through the Power Platform Admin Center
-3. **Verify successful installation** by checking for new tables and relationships
-4. **Review any post-installation configuration requirements**
 
-### Step 3: Deploy Application Components
-1. **Install the app starter kit solutions** for your selected modules
-2. **Import in dependency order** - some modules may depend on others
-3. **Test core functionality** to ensure proper installation
+1. **Download the module solution** from the repository
+2. **Review dependencies** - ensure any required modules are already installed
+3. **Import the solution** through the Power Platform Admin Center
+4. **Configure module-specific settings** as documented
+5. **Create required connections** if any new connectors are needed
+6. **Test the module** to verify proper installation
 
-### Step 4: Create Your Custom Solution
+### Step 3: Create Your Custom Solution
+
+To build your own application using FAST modules:
+
 1. **Create a new unmanaged solution** for your specific application
-2. **Use a clear naming convention** (e.g., "YourOrg-CaseManagement-v1")
-3. **Add a meaningful description** and version information
-4. **Set appropriate solution publisher** details
+   - Use a clear naming convention (e.g., `YourOrg-AssetTracking-v1`)
+   - Add a meaningful description and version information
+   - Set appropriate solution publisher details
 
-### Step 5: Customize and Build
-1. **Add components from installed starter kits** to your solution
-2. **Customize forms, views, and business logic** to meet your requirements
-3. **Configure security roles and permissions** appropriately
-4. **Test functionality** thoroughly in your development environment
-5. **Document customizations** for future maintenance
+2. **Add FAST components to your solution**
+   - Add existing components (tables, forms, views) from installed modules
+   - Customize as needed for your requirements
+   - Build additional components specific to your use case
+
+3. **Customize and extend**
+   - Modify forms, views, and business logic
+   - Add custom fields to existing tables
+   - Create new automation flows
+   - Configure security roles and permissions
+
+4. **Test thoroughly**
+   - Validate all functionality in your development environment
+   - Test integration points between modules
+   - Verify security and permissions
+
+## Best Practices
+
+### Solution Layering
+
+FAST modules use a layered approach:
+- **Managed solutions** (Core and specialty modules) provide the base functionality
+- **Unmanaged solutions** (your customizations) extend and modify as needed
+- Keep customizations in separate solutions for easier maintenance and upgrades
+
+### Environment Strategy
+
+Consider this environment progression:
+1. **Development** - Install modules, build customizations, test changes
+2. **Test/UAT** - Deploy for user acceptance testing
+3. **Production** - Deploy validated solutions for end users
+
+### Module Updates
+
+When new versions of FAST modules are released:
+1. Review release notes for breaking changes
+2. Test updates in a development environment first
+3. Validate your customizations still work
+4. Deploy to production following your ALM process
 
 ## Next Steps
 
 After completing this setup:
 
-1. **Explore the documentation** for your installed modules
-2. **Review best practices** for Power Platform development
-3. **Plan your customization approach** before making changes
-4. **Set up proper ALM (Application Lifecycle Management)** processes
-5. **Consider automated deployment** strategies for production
+1. **Explore module documentation** for detailed feature guides
+2. **Review [Use Cases]({{ '/use-cases/' | relative_url }})** for real-world scenarios
+3. **Join the community** to share experiences and get help
+4. **Plan your ALM strategy** for moving solutions between environments
+5. **Consider contributing** improvements back to the FAST repository
 
 ## Getting Help
 
-If you encounter issues during setup, please refer to our [Support page]({{ '/SUPPORT' | relative_url }}) for detailed information on how to get help and file issues specific to different components of the GLOWS platform.
+If you encounter issues during setup:
+
+- Review the module-specific documentation on this site
+- Check the [FAST Modules Repository](https://github.com/microsoft/industry-apps) for known issues
+- Refer to our [Support page]({{ '/SUPPORT' | relative_url }}) for information on filing issues
+- Engage with the community through repository discussions
+
+---
+
+**Welcome to FAST!** We're excited to see what you build.

@@ -33,37 +33,37 @@
 
 /* Mobile-first: small-screen adjustments grouped together */
 @media (max-width: 40rem) {
-  /* Identifier: stack brand vertically on small screens */
+  /* Identifier: keep logo and text side-by-side on small screens */
   .usa-identifier .usa-identifier__brand {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
   }
   .usa-identifier .usa-identifier__identity {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
-  /* Option B: Make logo containers block on small screens so text can wrap */
-  .usa-identifier__logo,
-  .usa-logo {
-    display: block !important;
-    width: auto !important;
+  /* Keep logo inline-flex for proper alignment */
+  .usa-identifier__logo {
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
   }
 
-  .usa-logo__text.brand {
-    display: block !important;
+  /* Allow text to wrap in the identifier section */
+  .usa-identifier .usa-identifier__identity {
+    flex: 1 1 auto;
+  }
+  
+  .usa-identifier .usa-identifier__tagline {
     white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    overflow-wrap: anywhere !important;
-    margin-top: 0.25rem !important;
+    overflow-wrap: break-word !important;
+    font-size: 0.875rem;
   }
 
-  /* Small-logo sizing for the stacked layout */
-  .usa-identifier .site-logo,
-  .custom-header .site-logo {
+  /* Small-logo sizing */
+  .usa-identifier .site-logo {
     height: var(--logo-small-h) !important;
     width: auto !important;
-    margin-right: 0.5rem !important;
   }
 }
 
@@ -141,6 +141,7 @@
   height: var(--logo-header-h) !important;
   vertical-align: middle;
   margin-right: 1rem;
+  border-radius: 8px;
 }
 
 /* Identifier area uses default logo height */
