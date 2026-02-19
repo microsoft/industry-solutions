@@ -1,0 +1,90 @@
+<!-- Experimental custom header included for side-by-side comparison. -->
+<header class="usa-header custom-header bg-primary-darker" role="banner" aria-label="Custom header (experimental)">
+  <div class="container custom-header-inner">
+    <div class="custom-header-row-main">
+      <div class="custom-brand-title">
+        <div class="custom-header-brand">
+
+          <a class="custom-brand-link" href="{{ '/' | relative_url }}">
+            <!-- <img class="custom-site-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }} logo"> -->
+            <img class="site-logo" src="{{ '/assets/site-logo.png' | relative_url }}" alt="Site logo">
+          </a>
+        </div>
+        <div class="custom-header-title">
+          <em class="usa-logo__text brand custom-site-title">{{ site.title }}</em>
+          {% if site.tagline %}
+          <div class="custom-site-tagline">{{ site.tagline }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+      <button class="custom-menu-btn" aria-expanded="false" aria-controls="custom-nav" aria-label="Open menu">
+        <svg class="custom-menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" />
+        </svg>
+        <span class="usa-sr-only">Menu</span>
+      </button>
+    </div>
+
+    <nav id="custom-nav" class="custom-header-nav" role="navigation" aria-label="Primary navigation" hidden>
+      <ul class="usa-nav__primary usa-accordion custom-nav-list">
+        <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+            href="{{ '/home/' | relative_url }}"><span>Home</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/blog/' | relative_url }}"><span>What's New</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/articles/' | relative_url }}"><span>Articles</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/use-cases/' | relative_url }}"><span>Use Cases</span></a></li>
+        <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+            href="{{ '/personas/' | relative_url }}"><span>Personas</span></a></li>
+        <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+            href="{{ '/data-models' | relative_url }}"><span>Data Models</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/app-starter-kits' | relative_url }}"><span>App Starter Kits</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/agents' | relative_url }}"><span>Agents</span></a></li>
+    <li class="usa-nav__primary-item custom-nav-item"><a class="usa-nav__link usa-link--inverse"
+      href="{{ '/portals' | relative_url }}"><span>Portals</span></a></li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.custom-menu-btn');
+    var nav = document.getElementById('custom-nav');
+    var header = document.querySelector('.custom-header');
+    if (!btn || !nav || !header) return;
+
+    function openNav() {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close menu');
+      nav.removeAttribute('hidden');
+      nav.classList.add('open');
+    }
+
+    function closeNav() {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+      nav.setAttribute('hidden', '');
+      nav.classList.remove('open');
+    }
+
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      expanded ? closeNav() : openNav();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!header.contains(e.target)) closeNav();
+    });
+  })();
+</script>

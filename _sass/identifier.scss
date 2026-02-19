@@ -1,0 +1,183 @@
+/* Identifier component overrides */
+.usa-identifier {
+  overflow: visible !important;
+  z-index: 0;
+}
+/* Add vertical padding so the logo doesn't bump up against the top */
+.usa-identifier .usa-identifier__container {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+/* Make identifier logo + identity sit side-by-side by default */
+.usa-identifier .usa-identifier__brand {
+  display: flex;
+  flex-direction: row; /* explicit default: keep logo + title side-by-side */
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+.usa-identifier .usa-identifier__logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+}
+.usa-identifier .usa-identifier__logo img {
+  height: var(--logo-identifier-h);
+  width: auto;
+  display: block;
+}
+.usa-identifier .usa-identifier__identity {
+  flex: 1 1 auto;
+  margin-top: 0;
+}
+
+/* Mobile-first: small-screen adjustments grouped together */
+@media (max-width: 40rem) {
+  /* Identifier: stack brand vertically on small screens */
+  .usa-identifier .usa-identifier__brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .usa-identifier .usa-identifier__identity {
+    margin-top: 0.5rem;
+  }
+
+  /* Option B: Make logo containers block on small screens so text can wrap */
+  .usa-identifier__logo,
+  .usa-logo {
+    display: block !important;
+    width: auto !important;
+  }
+
+  .usa-logo__text.brand {
+    display: block !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    overflow-wrap: anywhere !important;
+    margin-top: 0.25rem !important;
+  }
+
+  /* Small-logo sizing for the stacked layout */
+  .usa-identifier .site-logo,
+  .custom-header .site-logo {
+    height: var(--logo-small-h) !important;
+    width: auto !important;
+    margin-right: 0.5rem !important;
+  }
+}
+
+/* Stronger override: force side-by-side on medium+ screens */
+@media (min-width: 40rem) {
+  .usa-identifier .usa-identifier__brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    flex-wrap: nowrap !important;
+  }
+  .usa-identifier .usa-identifier__logo {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .usa-identifier .usa-identifier__logo img {
+    height: var(--logo-identifier-h) !important;
+    width: auto !important;
+    display: block !important;
+  }
+  .usa-identifier .usa-identifier__identity {
+    flex: 1 1 auto !important;
+    margin-top: 0 !important;
+  }
+}
+
+.usa-identifier__logo,
+.usa-logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  max-width: none;
+}
+
+/* consolidated: keep logos and title inline */
+.usa-logo,
+.usa-identifier .usa-identifier__logo,
+.usa-logo__text.brand {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  gap: 0.5rem;
+  white-space: nowrap;
+  width: auto !important;
+  /* max-width: none !important; */
+}
+
+.usa-identifier__identity {
+  flex: 1 1 auto;
+}
+
+/* Identifier (tagline) should be smaller and stack cleanly */
+.usa-identifier .usa-identifier__tagline {
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* Identifier (tagline) should be smaller and stack cleanly */
+.usa-identifier .usa-identifier__tagline > a {
+  color: white;
+}
+
+
+/* Utility: control site logo sizing via class rather than inline styles */
+.site-logo {
+  width: auto !important;
+  height: var(--logo-identifier-h) !important;
+}
+
+/* Header-specific logo size (use header variable) */
+.custom-header .site-logo {
+  height: var(--logo-header-h) !important;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+/* Identifier area uses default logo height */
+.usa-identifier .site-logo {
+  width: auto !important;
+  height: var(--logo-identifier-h) !important;
+}
+
+/* Small screens: make all logos smaller to avoid layout issues */
+@media (max-width: 40rem) {
+  .site-logo {
+    height: var(--logo-small-h) !important;
+    margin-right: 0.5rem !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Final small-screen override: force header logo text to wrap and avoid clipping */
+@media (max-width: 40rem) {
+  .usa-header .usa-logo__text.brand {
+    white-space: normal !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+}
+
+/* Last-resort: override the grouped selector on small screens so the logo/text can stack/wrap */
+@media (max-width: 40rem) {
+  .usa-logo,
+  .usa-identifier .usa-identifier__logo,
+  .usa-logo__text.brand {
+    display: block !important;
+    white-space: normal !important;
+    flex: none !important;
+    align-items: baseline !important;
+  }
+}

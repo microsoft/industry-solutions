@@ -1,0 +1,218 @@
+{% comment %}
+related-items.html - OPTIMIZED VERSION
+Reduces O(n³) complexity to O(n) by eliminating nested loops
+Usage: {% include related-items.html to="personas" %}
+{% endcomment %}
+
+{%- assign from_coll = include.from | default: page.collection -%}
+{%- assign to_coll = include.to -%}
+
+{%- if from_coll and to_coll -%}
+
+  {%- comment -%} Determine canonical page_field / target_field {%- endcomment -%}
+  {%- assign page_field = '' -%}
+  {%- assign target_field = '' -%}
+  {%- assign heading = '' -%}
+  {%- assign icon = '' -%}
+
+  {%- if from_coll == 'use_cases' -%}
+    {%- if to_coll == 'personas' -%}
+      {%- assign page_field = 'related_personas' -%}
+      {%- assign target_field = 'related_use_cases' -%}
+      {%- assign heading = 'Related Personas' -%}
+      {%- assign icon = '👤' -%}
+    {%- elsif to_coll == 'data_models' -%}
+      {%- assign page_field = 'required_data_models' -%}
+      {%- assign target_field = 'related_use_cases' -%}
+      {%- assign heading = 'Required Data Models' -%}
+      {%- assign icon = '🗂️' -%}
+    {%- elsif to_coll == 'app_starter_kits' -%}
+      {%- assign page_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_use_cases' -%}
+      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign icon = '🧰' -%}
+    {%- elsif to_coll == 'portals' -%}
+      {%- assign page_field = 'related_portals' -%}
+      {%- assign target_field = 'related_use_cases' -%}
+      {%- assign heading = 'Related Portals' -%}
+      {%- assign icon = '🌐' -%}
+    {%- endif -%}
+
+  {%- elsif from_coll == 'personas' -%}
+    {%- if to_coll == 'use_cases' -%}
+      {%- assign page_field = 'related_use_cases' -%}
+      {%- assign target_field = 'related_personas' -%}
+      {%- assign heading = 'Related Use Cases' -%}
+      {%- assign icon = '💡' -%}
+    {%- elsif to_coll == 'data_models' -%}
+      {%- assign page_field = 'required_data_models' -%}
+      {%- assign target_field = 'related_personas' -%}
+      {%- assign heading = 'Required Data Models' -%}
+      {%- assign icon = '🗂️' -%}
+    {%- elsif to_coll == 'app_starter_kits' -%}
+      {%- assign page_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_personas' -%}
+      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign icon = '🧰' -%}
+    {%- elsif to_coll == 'portals' -%}
+      {%- assign page_field = 'related_portals' -%}
+      {%- assign target_field = 'related_personas' -%}
+      {%- assign heading = 'Related Portals' -%}
+      {%- assign icon = '🌐' -%}
+    {%- endif -%}
+
+  {%- elsif from_coll == 'data_models' -%}
+    {%- if to_coll == 'data_models' -%}
+      {%- assign page_field = 'required_data_models' -%}
+      {%- assign target_field = 'required_data_models' -%}
+      {%- assign heading = 'Required Data Models' -%}
+      {%- assign icon = '🗂️' -%}
+    {%- elsif to_coll == 'app_starter_kits' -%}
+      {%- assign page_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'required_data_models' -%}
+      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign icon = '🧰' -%}
+    {%- elsif to_coll == 'use_cases' -%}
+      {%- assign page_field = 'related_use_cases' -%}
+      {%- assign target_field = 'required_data_models' -%}
+      {%- assign heading = 'Related Use Cases' -%}
+      {%- assign icon = '💡' -%}
+    {%- elsif to_coll == 'personas' -%}
+      {%- assign page_field = 'related_personas' -%}
+      {%- assign target_field = 'required_data_models' -%}
+      {%- assign heading = 'Related Personas' -%}
+      {%- assign icon = '👤' -%}
+    {%- elsif to_coll == 'portals' -%}
+      {%- assign page_field = 'related_portals' -%}
+      {%- assign target_field = 'required_data_models' -%}
+      {%- assign heading = 'Related Portals' -%}
+      {%- assign icon = '🌐' -%}
+    {%- endif -%}
+
+  {%- elsif from_coll == 'app_starter_kits' -%}
+    {%- if to_coll == 'data_models' -%}
+      {%- assign page_field = 'required_data_models' -%}
+      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign heading = 'Required Data Models' -%}
+      {%- assign icon = '🗂️' -%}
+    {%- elsif to_coll == 'app_starter_kits' -%}
+      {%- assign page_field = 'required_app_starter_kits' -%}
+      {%- assign target_field = 'required_app_starter_kits' -%}
+      {%- assign heading = 'Required App Starter Kits' -%}
+      {%- assign icon = '🧰' -%}
+    {%- elsif to_coll == 'use_cases' -%}
+      {%- assign page_field = 'related_use_cases' -%}
+      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign heading = 'Related Use Cases' -%}
+      {%- assign icon = '💡' -%}
+    {%- elsif to_coll == 'personas' -%}
+      {%- assign page_field = 'related_personas' -%}
+      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign heading = 'Related Personas' -%}
+      {%- assign icon = '👤' -%}
+    {%- elsif to_coll == 'portals' -%}
+      {%- assign page_field = 'related_portals' -%}
+      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign heading = 'Related Portals' -%}
+      {%- assign icon = '🌐' -%}
+    {%- endif -%}
+
+  {%- elsif from_coll == 'portals' -%}
+    {%- if to_coll == 'data_models' -%}
+      {%- assign page_field = 'required_data_models' -%}
+      {%- assign target_field = 'related_portals' -%}
+      {%- assign heading = 'Required Data Models' -%}
+      {%- assign icon = '🗂️' -%}
+    {%- elsif to_coll == 'portals' -%}
+      {%- assign page_field = 'required_portals' -%}
+      {%- assign target_field = 'required_portals' -%}
+      {%- assign heading = 'Required Portals' -%}
+      {%- assign icon = '🌐' -%}
+    {%- elsif to_coll == 'use_cases' -%}
+      {%- assign page_field = 'related_use_cases' -%}
+      {%- assign target_field = 'related_portals' -%}
+      {%- assign heading = 'Related Use Cases' -%}
+      {%- assign icon = '💡' -%}
+    {%- elsif to_coll == 'personas' -%}
+      {%- assign page_field = 'related_personas' -%}
+      {%- assign target_field = 'related_portals' -%}
+      {%- assign heading = 'Related Personas' -%}
+      {%- assign icon = '👤' -%}
+    {%- elsif to_coll == 'app_starter_kits' -%}
+      {%- assign page_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_portals' -%}
+      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign icon = '🧰' -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if page_field != '' and target_field != '' -%}
+    {%- assign found = false -%}
+    {%- assign list_items = '' -%}
+    {%- assign added = '|' -%}
+
+    {%- comment -%} OPTIMIZED: Simple direct lookup instead of complex nested loops {%- endcomment -%}
+    {%- if page[page_field] -%}
+      {%- for ref_name in page[page_field] -%}
+        {%- assign ref_name_lc = ref_name | downcase -%}
+        {%- for candidate in site[to_coll] -%}
+          {%- assign candidate_title_lc = candidate.title | default: '' | downcase -%}
+          {%- assign candidate_slug_lc = candidate.slug | default: '' | downcase -%}
+          {%- if ref_name_lc == candidate_title_lc or ref_name_lc == candidate_slug_lc -%}
+            {%- unless added contains candidate.url -%}
+              {%- assign added = added | append: candidate.url | append: '|' -%}
+              {%- assign found = true -%}
+              {%- capture item_html -%}
+<li style="display:flex; align-items:center; gap:0.5rem;">
+  <span aria-hidden="true" style="display:inline-block; width:1.25rem; text-align:center;">{{ icon }}</span>
+  <a href="{{ candidate.url | relative_url }}" class="usa-link">{{ candidate.title }}</a>
+</li>
+              {%- endcapture -%}
+              {%- assign list_items = list_items | append: item_html -%}
+              {%- break -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- comment -%} OPTIMIZED: Reverse lookup - find items that reference this page (only for non-required relationships) {%- endcomment -%}
+    {%- unless page_field contains 'require' -%}
+      {%- assign page_title_lc = page.title | default: '' | downcase -%}
+      {%- assign page_slug_lc = page.slug | default: '' | downcase -%}
+      
+      {%- for candidate in site[to_coll] -%}
+        {%- if candidate.url != page.url and candidate[target_field] -%}
+          {%- for cref in candidate[target_field] -%}
+            {%- assign cref_lc = cref | downcase -%}
+            {%- if cref_lc == page_title_lc or cref_lc == page_slug_lc -%}
+              {%- unless added contains candidate.url -%}
+                {%- assign added = added | append: candidate.url | append: '|' -%}
+                {%- assign found = true -%}
+                {%- capture item_html -%}
+<li style="display:flex; align-items:center; gap:0.5rem;">
+  <span aria-hidden="true" style="display:inline-block; width:1.25rem; text-align:center;">{{ icon }}</span>
+  <a href="{{ candidate.url | relative_url }}" class="usa-link">{{ candidate.title }}</a>
+</li>
+                {%- endcapture -%}
+                {%- assign list_items = list_items | append: item_html -%}
+                {%- break -%}
+              {%- endunless -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endunless -%}
+
+    {%- if found -%}
+      <section class="margin-top-4">
+        <h3>{{ heading }}</h3>
+        <ul class="usa-list" style="list-style: none; margin: 0; padding-left: 0;">
+          {{ list_items }}
+        </ul>
+      </section>
+    {%- endif -%}
+
+  {%- endif -%}
+
+{%- endif -%}

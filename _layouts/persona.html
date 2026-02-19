@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<section class="usa-section">
+  <div class="grid-container-full">
+
+    <div class="grid-row grid-gap">
+
+      <!-- Sidebar navigation -->
+
+      <aside class="grid-col-12 tablet:grid-col-3">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} persona image" class="page-thumbnail">
+        {% if page.description %}
+          <div class="usa-prose margin-bottom-2">
+            {{ page.description }}
+          </div>
+        {% endif %}
+      </aside>
+
+      <!-- Main content (right side) -->
+      <main class="grid-col-12 tablet:grid-col-9 usa-prose">
+
+        <!-- Header row: breadcrumbs + page title -->
+        <div class="grid-row grid-gap">
+          <div class="grid-col-12 usa-prose">
+            {% include breadcrumbs.html %}
+          </div>
+        </div>
+
+        <!-- Content row: main column + small right column -->
+        <div class="grid-row grid-gap">
+
+          <!-- Main column -->
+          <div class="grid-col-12 tablet:grid-col-9 usa-prose">
+
+            <h1 class="mgat-solution-heading">{{ page.title }}</h1>
+            <hr />
+
+            {{ content }}
+
+          </div>
+
+          <!-- Small right column (download + personas) -->
+          <div class="grid-col-12 tablet:grid-col-3">
+            {% include related-items.html to="use_cases" %}
+            {% include related-items.html to="data_models" %}
+            {% include related-items.html to="app_starter_kits" %}
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+</section>

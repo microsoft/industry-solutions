@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{% comment %} Blog post layout with clean sidebar navigation similar to data model pages {% endcomment %}
+<section class="usa-section">
+  <div class="grid-container-full">
+    <div class="grid-row grid-gap">
+      
+      <!-- Sidebar navigation -->
+      <aside class="grid-col-12 tablet:grid-col-3">
+        {% if page.thumbnail %}
+          <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} blog post image" class="page-thumbnail">
+        {% endif %}
+
+        {% comment %} Blog posts side navigation {% endcomment %}
+        {% include blog-sidenav.html count=8 %}
+      </aside>
+
+      <!-- Main content -->
+      <main class="grid-col-12 tablet:grid-col-9 usa-prose">
+        <div class="grid-row grid-gap">
+          <div class="grid-col-12 usa-prose">
+            {% include breadcrumbs.html %}
+          </div>
+        </div>
+
+        <div class="grid-row grid-gap">
+          <div class="grid-col-12 tablet:grid-col-9 usa-prose">
+            <article class="post">
+              <header class="post-header margin-bottom-2">
+                <h1 class="usa-prose__heading">{{ page.title }}</h1>
+                <p class="text-base-italic">{% if page.date %}{{ page.date | date: "%B %-d, %Y" }}{% endif %}</p>
+                {% if page.author %}
+                <p class="text-small">By {{ page.author }}</p>
+                {% endif %}
+              </header>
+
+              <div class="post-content">
+                {{ content }}
+              </div>
+
+              {% if page.tags %}
+              <footer class="post-footer margin-top-4">
+                <div class="post-tags">
+                  <strong>Tags:</strong>
+                  <div class="tag-list margin-top-1">
+                    {% for tag in page.tags %}
+                      <a href="{{ '/blog/' | relative_url }}#{{ tag | slugify }}" class="usa-tag margin-right-1 margin-bottom-1">{{ tag }}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </footer>
+              {% endif %}
+            </article>
+          </div>
+
+          <!-- Small right column for additional content if needed -->
+          <div class="grid-col-12 tablet:grid-col-3">
+            {% if page.credits %}
+              <div class="usa-prose margin-top-3">
+                <h3>Credit</h3>
+                {% for credit in page.credits %}
+                  {% if credit.url %}
+                    <p><a href="{{ credit.url }}" target="_blank" rel="noopener">{{ credit.name }}{% if credit.company %} ({{ credit.company }}){% endif %}</a></p>
+                  {% else %}
+                    <p>{{ credit.name }}{% if credit.company %} ({{ credit.company }}){% endif %}</p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% comment %} Future: Could add related content, social sharing, etc. {% endcomment %}
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>

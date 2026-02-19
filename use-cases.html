@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<section class="usa-section padding-top-2">
+  <div class="container">
+    <header class="margin-bottom-2">
+      <h1 class="usa-display">Government Use Cases</h1>
+      <p>Use this area to explore government-focused use cases. Each use case illustrates a common mission scenario and shows how it connects to the rest of the ecosystem: the personas who interact with the process, the data models that structure the information, and the app starter kits that provide ready-to-use functionality. This helps you see how the building blocks come together in practice and guides you toward the right starting point for your own solution.</p>
+    </header>
+
+    <div class="grid-row grid-gap">
+      {% assign items = site.use_cases | sort: 'title' %}
+      {% for item in items %}
+        <!-- 1-up mobile, 2-up tablet, 3-up desktop -->
+        <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col-4 margin-bottom-2">
+          {% include card.html
+            type="use_case"
+            title=item.title
+            url=item.url
+            description=item.description
+            thumbnail=item.thumbnail
+          %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Optional empty state (render if no items) -->
+    {% if items.size == 0 %}
+      <div class="usa-alert usa-alert--info margin-top-2" role="status">
+        <div class="usa-alert__body"><p class="usa-alert__text">No app starter kits found.</p></div>
+      </div>
+    {% endif %}
+  </div>
+</section>

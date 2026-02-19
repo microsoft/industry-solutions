@@ -1,0 +1,215 @@
+title: GLOWS (Government Low-code Open-source Workforce Solutions)
+first: Government Low Code, Open Source Solutions
+description: MIT Open-source solutions for Power Platform and Dynamics 365
+logo: /assets/logo.png
+
+# If this is a project site (https://username.github.io/repo), set baseurl to "/repo"
+url: "https://microsoft.github.io"   # host only, no trailing slash
+baseurl: "/gov-solutions"             # MUST start with a slash; repo name
+repository: "microsoft/gov-solutions" # (nice to have for jekyll-github-metadata)
+
+# Keep Markdown simple; we’re not using plugins that Pages doesn’t support
+markdown: kramdown
+permalink: pretty
+
+# Control how excerpts are generated for posts (use <!--more--> in content to force an excerpt break)
+excerpt_separator: "<!--more-->"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build performance optimizations
+# incremental: true
+# profile: true
+strict_front_matter: true
+
+# Liquid optimizations  
+liquid:
+  error_mode: strict
+  strict_filters: true
+  strict_variables: false
+
+# Exclude unnecessary files from processing
+exclude:
+  - .github/
+  - scripts/
+  - "*.log"
+  - node_modules/
+  - vendor/
+  - Gemfile*
+  - "*.md.backup"
+
+# Plugins (jekyll-feed is supported by GitHub Pages and provides an RSS/Atom feed)
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  app_starter_kits:
+    output: true
+    permalink: /app-starter-kits/:title/
+    displayname: "App Starter Kits"
+    # top-level collection: no parent_collection
+  docs:
+    output: true
+    permalink: /docs/:path/
+    displayname: "Documentation"
+  app_releases:
+    output: true
+    permalink: /app-starter-kits/releases/:path/
+    displayname: "App Releases"
+  articles:
+    output: true
+    permalink: /articles/:title/
+    displayname: "Articles"
+  data_model_releases:
+    output: true
+    permalink: /data-models/releases/:path/
+    displayname: "Data Model Releases"
+  use_cases:
+    output: true
+    permalink: /use-cases/:title/
+    displayname: "Use Cases"
+    # no parent_collection configured by default
+  personas:
+    output: true
+    permalink: /personas/:title/
+    displayname: "Personas"
+    # no parent_collection configured by default
+  data_models:
+    output: true
+    permalink: /data-models/:title/
+    displayname: "Data Models"
+    # top-level collection: no parent_collection
+  agents:
+    output: true
+    permalink: /agents/:title/
+    displayname: "Agents"
+    # top-level collection: no parent_collection
+  portals:
+    output: true
+    permalink: /portals/:title/
+    displayname: "Portals"
+    # top-level collection: no parent_collection
+  portal_releases:
+    output: true
+    permalink: /portals/releases/:path/
+    displayname: "Portal Releases"
+  tables:
+    output: true
+    permalink: /tables/:path/
+    displayname: "Tables"
+
+defaults:
+  - scope:
+      type: app_starter_kits
+    values:
+      layout: solution
+      parent: "App Starter Kits"
+      thumbnail: "/assets/app-starter-kits/default.png"
+      latest_release: ""
+      requires: []
+      use_cases: []
+      personas: []
+      data_models: []
+  - scope:
+      type: data_models
+    values:
+      layout: data_model
+      parent: "Data Models"
+      thumbnail: "/assets/data-models/default.png"
+      latest_release: ""
+      requires: []
+      use_cases: []
+      personas: []
+  - scope:
+      type: agents
+    values:
+      layout: solution
+      parent: "Agents"
+      thumbnail: "/assets/agents/default.png"
+      latest_release: ""
+      requires: []
+      use_cases: []
+      personas: []
+  - scope:
+      type: portals
+    values:
+      layout: portal
+      parent: "Portals"
+      thumbnail: "/assets/portals/default.png"
+      latest_release: ""
+      requires: []
+      use_cases: []
+      personas: []
+  - scope:
+      type: data_model_releases
+    values:
+      layout: release
+      thumbnail: "/assets/data-models/default.png"
+      parent_collection: data_models
+  - scope:
+      type: app_releases
+    values:
+      layout: release
+      parent_collection: app_starter_kits
+      thumbnail: "/assets/app-starter-kits/default.png"
+  - scope:
+      type: portal_releases
+    values:
+      layout: release
+      parent_collection: portals
+      thumbnail: "/assets/portals/default.png"
+  - scope:
+      type: articles
+    values:
+      layout: article
+  # App starter kit docs
+  - scope:
+      type: docs
+      path: "_docs/app-starter-kits/**"
+    values:
+      layout: doc
+      parent_collection: app_starter_kits
+  
+  # Data model docs
+  - scope:
+      type: docs
+      path: "_docs/data-models/**"
+    values:
+      layout: doc
+      parent_collection: data_models
+  
+  # Portal docs
+  - scope:
+      type: docs
+      path: "_docs/portals/**"
+    values:
+      layout: doc
+      parent_collection: portals
+  
+  # Agent docs
+  - scope:
+      type: docs
+      path: "_docs/agents/**"
+    values:
+      layout: doc
+      parent_collection: agents
+  
+  
+  # Fallback for any other docs
+  - scope:
+      type: docs
+    values:
+      layout: doc
+      parent_collection: app_starter_kits
+  - scope:
+      type: tables
+    values:
+      layout: table
+      parent_collection: data_models
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
