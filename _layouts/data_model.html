@@ -95,7 +95,8 @@ layout: default
               a new solution, add the components to that solution and make changes as needed.
               <br />
 
-              {% include data_model_releases.html %}
+              <!-- {% include data_model_releases.html %} -->
+              <p>Release information coming soon.</p>
             </section>
 
           </div>
@@ -105,7 +106,8 @@ layout: default
 
             {% if page.latest_release %}
               {% assign lr = page.latest_release %}
-              {% assign rel = site.data_model_releases | where: "parent", page.slug | where: "version", lr | first %}
+              {% comment %} {% assign rel = site.data_model_releases | where: "parent", page.slug | where: "version", lr | first %} {% endcomment %}
+              {% assign rel = nil %}
               {% if rel and rel.custom_release_file %}
                 <a class="usa-button"
                   href="{{ rel.custom_release_file }}"

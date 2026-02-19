@@ -7,7 +7,7 @@ published: false
 ---
 
 ```
-Please complete the sections in this template for this article on the USECASE use case for government agencies. Also create a brief description based on the content in the front matter section.
+Please complete the sections in this template for this article on the USECASE use case for organizations. Also create a brief description based on the content in the front matter section.
 ```
 
 ## Overview
@@ -15,7 +15,7 @@ Please complete the sections in this template for this article on the USECASE us
 A plain-language summary of the use case, specific to governemnt agencies.  
 
 - What mission scenario it covers.  
-- Why this use case is important in government operations.  
+- Why this use case is important in organizational operations.  
 
 ## Where <Use Case> is used
 

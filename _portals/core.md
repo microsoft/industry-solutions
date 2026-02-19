@@ -1,6 +1,6 @@
 ---
 title: Core Portal
-description: "Provides a foundational USWDS-styled portal shell with identification banner, header, navigation, and footer for building government portals."
+description: "Provides a foundational USWDS-styled portal shell with identification banner, header, navigation, and footer for building organizational portals."
 latest_release: v1.0.0.0
 thumbnail: /assets/use_cases/core.png
 required_data_models: []
@@ -13,14 +13,14 @@ The **Core Portal** provides a starting point for building custom portal solutio
 
 The Core Portal provides:
 
-* **USWDS Identification Banner** – Government identification banner with proper styling
+* **USWDS Identification Banner** – Identification banner with proper styling
 * **Header with Search Bar** – Clean header component with integrated search functionality
 * **Navigation Menu Bar** – Structured navigation framework ready for customization
-* **Footer** – Government footer with required links and information
+* **Footer** – Footer with required links and information
 
 ## Typical Use Cases
 
-* **Starting point for new government portals** – Begin with proper structure and styling
+* **Starting point for new portals** – Begin with proper structure and styling
 * **Portal modernization projects** – Replace legacy portal frameworks with modern, compliant foundation
 * **Multi-portal consistency** – Use as a common base across multiple portal projects
 * **Proof of concept development** – Quickly stand up a professional-looking portal shell for demonstrations

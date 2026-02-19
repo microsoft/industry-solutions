@@ -1,15 +1,15 @@
 ---
 title: Asset Management
-description: "Guidance for managing government assets throughout their lifecycle: inventory, tracking, maintenance, compliance, and optimization."
+description: "Guidance for managing organizational assets throughout their lifecycle: inventory, tracking, maintenance, compliance, and optimization."
 layout: use_case
 thumbnail: /assets/use_cases/asset-management.png
 ---
 
 ## Overview
 
-Asset Management in government refers to the systematic process of acquiring, tracking, maintaining, and disposing of physical and digital assets to support mission objectives, ensure compliance, and optimize resource utilization. This use case is critical for safeguarding public resources, enabling transparency, and supporting operational readiness across a wide range of government functions.
+Asset Management refers to the systematic process of acquiring, tracking, maintaining, and disposing of physical and digital assets to support organizational objectives, ensure compliance, and optimize resource utilization. This use case is critical for safeguarding resources, enabling transparency, and supporting operational readiness across a wide range of functions.
 
-- Mission scenario: managing fleets, IT equipment, facilities, or other government-owned assets from acquisition to retirement.
+- Mission scenario: managing fleets, IT equipment, facilities, or other organizational assets from acquisition to retirement.
 - Importance: ensures accountability, reduces loss and misuse, supports budgeting and planning, and maintains compliance with regulations and audit requirements.
 
 ## Where Asset Management is used
@@ -52,7 +52,7 @@ Typical steps and interacting personas:
 
 - Accurate, real-time asset tracking across distributed locations and departments.
 - Integration with procurement, finance, and maintenance systems.
-- Ensuring compliance with government regulations and audit requirements.
+- Ensuring compliance with organizational regulations and audit requirements.
 - Managing asset lifecycle costs and optimizing replacement schedules.
 - Preventing loss, theft, or misuse of assets.
 - Supporting mobile and field operations for inventory and maintenance.

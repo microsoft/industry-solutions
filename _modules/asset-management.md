@@ -1,6 +1,6 @@
 ---
 title: "Asset Management"
-description: "Track, categorize, and manage government assets with a modern, reusable solution for accountability and lifecycle management."
+description: "Track, categorize, and manage organizational assets with a modern, reusable solution for accountability and lifecycle management."
 latest_release: v1.2.0.0
 # release_url: "https://github.com/microsoft/gov-apptemplates/raw/main/modules/asset-management/releases/v1.2.0.0/custom-file.zip"
 thumbnail: /assets/use_cases/asset-management.png
@@ -12,7 +12,7 @@ related_use_cases:
   - asset-management
 ---
 
-The **Asset Management** module provides a structured framework for tracking, managing, and maintaining physical and accountable assets across government organizations. Built on the Asset Management data model, it delivers a model-driven app with redesigned forms, comprehensive views, and an overview dashboard that streamline asset operations and strengthen accountability across the enterprise.
+The **Asset Management** module provides a structured framework for tracking, managing, and maintaining physical and accountable assets across organizations. Built on the Asset Management data model, it delivers a model-driven app with redesigned forms, comprehensive views, and an overview dashboard that streamline asset operations and strengthen accountability across the enterprise.
 
 At the center of the module is the **Assets** area, which serves as the primary hub for managing the lifecycle of individual assets. The redesigned Asset form organizes information across four intuitive tabs—Asset Overview, Financials, Ownership & Location, and Notes—making it easier to register new assets, link them to categories and owners, and maintain detailed records including service history. Asset forms streamline data entry by grouping related fields logically, from identification and status tracking to financial information and location details, while preserving a clear audit trail of ownership and usage.
 

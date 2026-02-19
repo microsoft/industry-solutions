@@ -1,13 +1,13 @@
 ---
 title: Personnel Security
-description: "Processes and controls for vetting, onboarding, authorizing, monitoring, and offboarding personnel to reduce insider risk, ensure least-privilege access, and maintain compliance with government security policies."
+description: "Processes and controls for vetting, onboarding, authorizing, monitoring, and offboarding personnel to reduce insider risk, ensure least-privilege access, and maintain compliance with security policies."
 layout: use_case
 thumbnail: /assets/use_cases/personnel-security.png
 ---
 
 ## Overview
 
-Personnel Security covers the policies, processes, and technical controls that ensure the right people are granted the right access for the right reasons—and that access is continuously validated and removed when no longer required. In government contexts this includes background investigations and clearances, role-based access provisioning, continuous monitoring of privileged activity, and robust offboarding to protect sensitive information, mission continuity, and public trust.
+Personnel Security covers the policies, processes, and technical controls that ensure the right people are granted the right access for the right reasons—and that access is continuously validated and removed when no longer required. This includes background investigations and clearances, role-based access provisioning, continuous monitoring of privileged activity, and robust offboarding to protect sensitive information, mission continuity, and organizational trust.
 
 - Mission scenarios: onboarding staff and contractors with sensitive access; provisioning privileged accounts for mission-critical systems; responding to suspected insider threats or clearance changes.  
 - Importance: reduces insider risk, enables least-privilege enforcement, supports regulatory compliance (e.g., NIST/FISMA guidance), and preserves operational integrity.
@@ -63,7 +63,7 @@ Typical requirements and pain points for agencies:
 - Scalability and timeliness of background investigations and clearance processes.  
 - Clear ownership, workflows, and SLAs for access changes and revocations.  
 - Continuous monitoring and analytics tailored to detect insider risk and privileged misuse.  
-- Maintaining audit trails, evidence for audits, and demonstrable compliance with government standards.  
+- Maintaining audit trails, evidence for audits, and demonstrable compliance with organizational standards.  
 - Balancing privacy and data minimization with investigative and security needs.
 
 ## Success measures

@@ -1,13 +1,13 @@
 ---
 title: Time, Travel, and Expense Management
-description: "Guidance for managing employee timekeeping, travel authorizations, and expense reimbursements in government: workflows, compliance, and optimization."
+description: "Guidance for managing employee timekeeping, travel authorizations, and expense reimbursements: workflows, compliance, and optimization."
 layout: use_case
 thumbnail: /assets/use_cases/time-travel-expenses.png
 ---
 
 ## Overview
 
-Time, Travel, and Expense (TTE) Management in government encompasses the processes and systems for tracking employee work hours, managing travel requests and approvals, and reimbursing expenses in compliance with policy and regulation. Effective TTE management ensures fiscal responsibility, transparency, and operational efficiency while supporting employee mobility and mission needs.
+Time, Travel, and Expense (TTE) Management encompasses the processes and systems for tracking employee work hours, managing travel requests and approvals, and reimbursing expenses in compliance with policy and regulation. Effective TTE management ensures fiscal responsibility, transparency, and operational efficiency while supporting employee mobility and organizational needs.
 
 - Mission scenario: submitting and approving timesheets, requesting and authorizing official travel, and processing expense claims for reimbursement.
 - Importance: ensures accurate payroll, prevents fraud or misuse, supports audit readiness, and enables data-driven workforce and budget planning.
@@ -16,7 +16,7 @@ Time, Travel, and Expense (TTE) Management in government encompasses the process
 
 Common domains and agency types:
 
-- All government agencies with employees, contractors, or grant recipients
+- All organizations with employees, contractors, or grant recipients
 - Departments with frequent travel (field operations, inspections, training)
 - Research, education, and grant-funded programs
 - Emergency response and public safety organizations
@@ -45,7 +45,7 @@ Typical steps and interacting personas:
 ## Common needs and challenges
 
 - Integration with HR, payroll, and financial systems for seamless data flow.
-- Ensuring compliance with government travel and expense policies.
+- Ensuring compliance with organizational travel and expense policies.
 - Preventing errors, fraud, and duplicate claims.
 - Supporting mobile and remote employees for time and expense entry.
 - Timely approvals and reimbursements to maintain employee satisfaction.

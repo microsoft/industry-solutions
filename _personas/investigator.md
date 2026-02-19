@@ -8,7 +8,7 @@ related_use_cases:
  - personnel-security
 ---
 
-An Investigator carries out fact-finding activities across a range of government contexts — from personnel security background investigations to Office of Inspector General (OIG) inquiries and administrative misconduct reviews. Investigators gather, analyze, and document evidence, interview subjects and witnesses, and produce findings that inform adjudication, disciplinary, or audit actions.
+An Investigator carries out fact-finding activities across a range of contexts — from personnel security background investigations to internal inquiries and administrative misconduct reviews. Investigators gather, analyze, and document evidence, interview subjects and witnesses, and produce findings that inform adjudication, disciplinary, or audit actions.
 
 ## Major Responsibilities
 

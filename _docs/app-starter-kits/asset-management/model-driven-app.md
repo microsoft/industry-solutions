@@ -5,7 +5,7 @@ parent: asset-management
 description: "Walkthrough of the Asset Management model-driven app."
 ---
 
-The **Asset Management** model-driven app delivers a user-friendly interface for government agencies to track, manage, and maintain their physical and accountable assets. Built on the Asset Management data model, the app provides a suite of forms, views, and dashboards that streamline asset operations and support accountability across the organization.
+The **Asset Management** model-driven app delivers a user-friendly interface for organizations to track, manage, and maintain their physical and accountable assets. Built on the Asset Management data model, the app provides a suite of forms, views, and dashboards that streamline asset operations and support accountability across the organization.
 
 The app’s navigation is organized around key asset management processes, making it easy for users to find and update information. The main areas include:
 

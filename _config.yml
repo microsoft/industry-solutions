@@ -6,7 +6,7 @@ logo: /assets/logo.png
 # If this is a project site (https://username.github.io/repo), set baseurl to "/repo"
 url: "https://microsoft.github.io"   # host only, no trailing slash
 baseurl: "/industry-solutions"             # MUST start with a slash; repo name
-repository: "microsoft/gov-solutions" # (nice to have for jekyll-github-metadata)
+repository: "microsoft/industry-solutions" # (nice to have for jekyll-github-metadata)
 
 # Keep Markdown simple; we’re not using plugins that Pages doesn’t support
 markdown: kramdown

@@ -93,6 +93,7 @@ layout: default
 
               {% if parent_item_local and parent_item_local.latest_release %}
                 {% assign lr = parent_item_local.latest_release %}
+                {% comment %} Commented out data_model_releases references
                 {% if lookup_collection == "data_models" %}
                   {% assign rel = site.data_model_releases | where: "parent", parent_slug | where: "version", lr | first %}
                   {% if rel and rel.release_file %}
@@ -104,6 +105,9 @@ layout: default
                   {% endif %}
                 {% else %}
                   {% assign rel = site.app_releases | where: "parent", parent_slug | where: "version", lr | first %}
+                {% endif %}
+                {% endcomment %}
+                {% assign rel = site.app_releases | where: "parent", parent_slug | where: "version", lr | first %}
                   {% if rel and rel.release_file %}
                     {% assign rf = rel.release_file | default: "" | strip %}
                     {% if rf != "" %}
@@ -127,7 +131,6 @@ layout: default
                   {% else %}
                     <div></div>
                   {% endif %}
-                {% endif %}
               {% else %}
                 <div></div>
               {% endif %}

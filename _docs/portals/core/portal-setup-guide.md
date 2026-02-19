@@ -6,7 +6,7 @@ layout: doc
 published: false
 ---
 
-This guide walks you through setting up and customizing the Core Portal template for your government agency.
+This guide walks you through setting up and customizing the Core Portal template for your organization.
 
 ## Prerequisites
 
@@ -56,7 +56,7 @@ Before you begin, ensure you have:
 1. Go to **Site Settings**
 2. Find settings related to the identification banner
 3. Update with your agency's official name
-4. Configure any required government disclaimers
+4. Configure any required organizational disclaimers
 
 ## Customization Options
 

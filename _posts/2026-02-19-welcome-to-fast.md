@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to FAST - Industry Solutions"
 date: 2026-02-19
-categories: [announcements]
+tags: [announcements]
 ---
 
 We're excited to introduce **FAST** — an open-source ecosystem for building enterprise applications on Microsoft Power Platform and Dynamics 365.

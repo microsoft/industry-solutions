@@ -1,13 +1,13 @@
 ---
 title: Executive Coordination
-description: "Guidance for managing, tracking, and evaluating high-level directives, taskers, and executive actions in government: workflows, accountability, and cross-agency coordination."
+description: "Guidance for managing, tracking, and evaluating high-level directives, taskers, and executive actions: workflows, accountability, and cross-organizational coordination."
 layout: use_case
 thumbnail: /assets/use_cases/executive-coordination.png
 ---
 
 ## Overview
 
-Executive Coordination in government refers to the structured management of high-level directives, taskers, and executive actions that span multiple programs, offices, or agencies. This use case is essential for ensuring that leadership decisions are clearly communicated, responsibilities are assigned, legal and risk contexts are understood, and outcomes are tracked for accountability and learning.
+Executive Coordination refers to the structured management of high-level directives, taskers, and executive actions that span multiple programs, offices, or departments. This use case is essential for ensuring that leadership decisions are clearly communicated, responsibilities are assigned, legal and risk contexts are understood, and outcomes are tracked for accountability and learning.
 
 - Mission scenario: issuing and tracking executive directives, policy taskers, or formal actions that require coordinated response across organizational units and partners.
 - Importance: enables transparency, accountability, and effective follow-through on leadership priorities; supports compliance, risk management, and continuous improvement.

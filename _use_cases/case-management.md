@@ -1,15 +1,15 @@
 ---
 title: Case Management
-description: "Guidance for designing and operating government case management systems: workflows, data model, features, and implementation considerations."
+description: "Guidance for designing and operating case management systems: workflows, data model, features, and implementation considerations."
 layout: use_case
 thumbnail: /assets/use_cases/case-management.png
 ---
 
 ## Overview
 
-Case management systems coordinate the lifecycle of individual or entity focused work that requires assessment, decisioning, service delivery, and monitoring. In government settings this covers intake, eligibility and needs assessment, service planning and coordination, decisioning and enforcement, monitoring, and closure. Effective case management increases speed and consistency of service delivery, supports transparency and auditability, and improves outcomes while protecting privacy and equity.
+Case management systems coordinate the lifecycle of individual or entity focused work that requires assessment, decisioning, service delivery, and monitoring. This covers intake, eligibility and needs assessment, service planning and coordination, decisioning and enforcement, monitoring, and closure. Effective case management increases speed and consistency of service delivery, supports transparency and auditability, and improves outcomes while protecting privacy and equity.
 
-This guidance focuses on common workflows, a minimal core data model, recommended features, and implementation considerations for designing and operating case management systems in government programs.
+This guidance focuses on common workflows, a minimal core data model, recommended features, and implementation considerations for designing and operating case management systems.
 
 ## Where this use case is used
 
@@ -25,7 +25,7 @@ Common domains and program types (non‑exhaustive):
 
 ## High level processes
 
-Typical high‑level steps in a government case lifecycle and the primary personas involved:
+Typical high‑level steps in a case lifecycle and the primary personas involved:
 
 1. Intake & registration — Personas: citizen/portal, intake clerk
    - Capture identity, contact info, initial documents; create the case record and run basic validations/eligibility checks.
@@ -65,7 +65,7 @@ Core data model elements to support the lifecycle: Case, Person/Party, Program/E
 - Robust document and evidence management (unstructured content, OCR, redaction, secure sharing).
 - Usability for high caseloads and mobile/field workers (offline support, simplified UIs).
 - Scalable reporting and analytics for performance, compliance, and outcomes.
-- Procurement, budget and change‑management constraints in government contexts.
+- Procurement, budget and change‑management constraints in organizational contexts.
 
 ## Success measures
 

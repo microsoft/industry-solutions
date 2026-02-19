@@ -8,7 +8,7 @@ related_use_cases:
  - personnel-security
 ---
 
-A Chief Information Officer (CIO) in government is the senior executive responsible for the strategy, governance, and delivery of information technology (IT) and digital services across an agency or jurisdiction. The CIO ensures that technology investments align with mission priorities, comply with statutory mandates, and deliver secure, efficient, and citizen-focused services.
+A Chief Information Officer (CIO) is the senior executive responsible for the strategy, governance, and delivery of information technology (IT) and digital services across an organization. The CIO ensures that technology investments align with organizational priorities, comply with applicable mandates, and deliver secure, efficient, and user-focused services.
 
 ## Major Responsibilities
 
