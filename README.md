@@ -1,35 +1,32 @@
-# Microsoft Government Low-code Open-source With Standards
+# FAST - Flexible Application Solution Templates
 
-This repository is an open-source ecosystem for building government applications on Microsoft Power Platform and Dynamics 365. It provides reusable building blocks - standardized data models and modular starter apps - that help agencies deliver mission-focused solutions more quickly and with greater consistency.
+This repository is an open-source ecosystem for building enterprise applications on Microsoft Power Platform and Dynamics 365. It provides reusable, modular building blocks that help organizations deliver solutions more quickly and with greater consistency.
 
-This documentation site serves as the hub that brings the two core repositories together into a single experience:
+**FAST** stands for **Flexible Application Solution Templates**, and each module includes standardized data models, prebuilt applications, comprehensive documentation, and release packages — all available under the MIT license.
 
-* The **[Government Data Models](https://github.com/microsoft/gov-datamodels){:target="_blank" rel="noopener noreferrer"}** define standardized Dataverse schemas for common government business processes, ensuring interoperability and consistency across agencies and solutions.
-* The **[Government App Starter Kits](https://github.com/microsoft/gov-apptemplates){:target="_blank" rel="noopener noreferrer"}** provide prebuilt, modular applications built on those data models, offering a jump start for services such as permitting, case management, asset tracking, and grants management.
+This documentation site serves as the hub for the **[FAST Modules Repository](https://github.com/microsoft/industry-apps)**, which contains the source code, releases, and contribution guidelines.
 
-Here you’ll find quickstarts, domain use cases, personas, release notes, and architecture guidance that connect the two repositories into an end-to-end path. Whether you’re an implementer, industry partner, or hackathon participant, Gov Solutions gives you the tools to move from evaluation to deployment with confidence.
+Whether you're in public sector, healthcare, education, manufacturing, or any other industry, **FAST** gives you a proven foundation to accelerate solution delivery while maintaining flexibility to tailor applications to your specific needs.
 
-## 🎯 Your Choice: Clean Separate of Data Models and App Starter Kits
+## 🎯 Modular, Flexible, Industry-Ready
 
-The Data Models and App Starter Kits in this repository are designed to work together as a modular, layered foundation for building government solutions on Microsoft Dataverse and the Power Platform.
+The modules in this repository are designed as a layered, composable foundation that works across industries:
 
-- Data Models provide the standardized, reusable data models — entities, relationships, and field specifications — that define the structure and semantics of common government business processes.
+- **Modules** provide complete, ready-to-deploy solutions with data models, forms, views, dashboards, automation, and business logic for common business processes like asset management, case tracking, project management, and more.
 
-- App Starter Kits provide the ready-to-deploy applications built on top of those models, delivering preconfigured forms, views, dashboards, automation, and business logic.
+- **Modular design** means you can deploy individual modules independently or combine them to build more comprehensive solutions.
 
-Keeping these in separate repositories offers several benefits:
+- **Standardized data models** ensure consistency and interoperability, making it easier to integrate modules with each other and with external systems.
 
-- Clear separation of governance and reusability – Data models can evolve under their own governance rules, without being tied to specific app release cycles.
+- **Industry-agnostic patterns** support common business processes found across sectors, with the flexibility to extend and customize for industry-specific requirements.
 
-- Independent versioning – You can update a data model without republishing every app, and vice versa.
+Benefits of this modular approach:
 
-- Wider reusability – Other apps (internal or third-party) can consume the standardized models without needing to adopt the provided app templates.
-
-- Simpler contribution paths – Developers can contribute to either the shared data foundation or the application layer based on their expertise.
-
-- Better lifecycle management – Agencies can standardize data schemas across multiple solutions while tailoring applications to their unique mission needs.
-
-By using both together, agencies get a consistent, governed data layer plus a set of deployable, mission-focused apps that can be adapted quickly and maintained over time.
+- **Faster time to value** – Start with working solutions instead of building from scratch
+- **Lower risk** – Build on tested, documented patterns rather than reinventing common capabilities
+- **Easier maintenance** – Modular architecture means changes to one component don't cascade through the entire system
+- **Better reusability** – Share modules across different projects and teams
+- **Clearer governance** – Each module can have its own lifecycle while remaining compatible with the ecosystem
 
 ## 🛠️ Contributing
 
