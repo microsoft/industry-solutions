@@ -4,7 +4,7 @@ description: "Track, categorize, and manage government assets with a modern, reu
 latest_release: v1.2.0.0
 # release_url: "https://github.com/microsoft/gov-apptemplates/raw/main/modules/asset-management/releases/v1.2.0.0/custom-file.zip"
 thumbnail: /assets/use_cases/asset-management.png
-required_app_starter_kits:
+required_modules:
  - core
 required_data_models:
   - asset-management

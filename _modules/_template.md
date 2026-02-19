@@ -3,7 +3,7 @@ title: "<Module Name>"
 description: "<Short description of the module>"
 latest_release: <version>
 thumbnail: <path-to-thumbnail>
-required_app_starter_kits:
+required_modules:
   - core
 required_data_models:
   - <data-model-name>

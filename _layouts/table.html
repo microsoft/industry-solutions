@@ -10,10 +10,10 @@ layout: default
       <!-- Sidebar navigation -->
       <aside class="grid-col-12 tablet:grid-col-3">
 
-        {% comment %} Find the parent app starter kit {% endcomment %}
+        {% comment %} Find the parent module {% endcomment %}
         {% assign parent_item = nil %}
         {% if page.parent %}
-          {% assign parent_item = site.app_starter_kits | where: "slug", page.parent | first %}
+          {% assign parent_item = site.modules | where: "slug", page.parent | first %}
         {% endif %}
 
         {% if parent_item %}
@@ -88,7 +88,7 @@ layout: default
               {% endif %}
             {% endif %}
 
-            {% include related-items.html to="app_starter_kits" %}
+            {% include related-items.html to="modules" %}
             {% include related-items.html to="use_cases" %}
             {% include related-items.html to="personas" %}
           </div>

@@ -26,10 +26,10 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_use_cases' -%}
       {%- assign heading = 'Required Data Models' -%}
       {%- assign icon = '🗂️' -%}
-    {%- elsif to_coll == 'app_starter_kits' -%}
-      {%- assign page_field = 'related_app_starter_kits' -%}
+    {%- elsif to_coll == 'modules' -%}
+      {%- assign page_field = 'related_modules' -%}
       {%- assign target_field = 'related_use_cases' -%}
-      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign heading = 'Related Modules' -%}
       {%- assign icon = '🧰' -%}
     {%- elsif to_coll == 'portals' -%}
       {%- assign page_field = 'related_portals' -%}
@@ -49,10 +49,10 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_personas' -%}
       {%- assign heading = 'Required Data Models' -%}
       {%- assign icon = '🗂️' -%}
-    {%- elsif to_coll == 'app_starter_kits' -%}
-      {%- assign page_field = 'related_app_starter_kits' -%}
+    {%- elsif to_coll == 'modules' -%}
+      {%- assign page_field = 'related_modules' -%}
       {%- assign target_field = 'related_personas' -%}
-      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign heading = 'Related Modules' -%}
       {%- assign icon = '🧰' -%}
     {%- elsif to_coll == 'portals' -%}
       {%- assign page_field = 'related_portals' -%}
@@ -67,10 +67,10 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'required_data_models' -%}
       {%- assign heading = 'Required Data Models' -%}
       {%- assign icon = '🗂️' -%}
-    {%- elsif to_coll == 'app_starter_kits' -%}
-      {%- assign page_field = 'related_app_starter_kits' -%}
+    {%- elsif to_coll == 'modules' -%}
+      {%- assign page_field = 'related_modules' -%}
       {%- assign target_field = 'required_data_models' -%}
-      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign heading = 'Related Modules' -%}
       {%- assign icon = '🧰' -%}
     {%- elsif to_coll == 'use_cases' -%}
       {%- assign page_field = 'related_use_cases' -%}
@@ -89,30 +89,30 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign icon = '🌐' -%}
     {%- endif -%}
 
-  {%- elsif from_coll == 'app_starter_kits' -%}
+  {%- elsif from_coll == 'modules' -%}
     {%- if to_coll == 'data_models' -%}
       {%- assign page_field = 'required_data_models' -%}
-      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_modules' -%}
       {%- assign heading = 'Required Data Models' -%}
       {%- assign icon = '🗂️' -%}
-    {%- elsif to_coll == 'app_starter_kits' -%}
-      {%- assign page_field = 'required_app_starter_kits' -%}
-      {%- assign target_field = 'required_app_starter_kits' -%}
-      {%- assign heading = 'Required App Starter Kits' -%}
+    {%- elsif to_coll == 'modules' -%}
+      {%- assign page_field = 'required_modules' -%}
+      {%- assign target_field = 'required_modules' -%}
+      {%- assign heading = 'Required Modules' -%}
       {%- assign icon = '🧰' -%}
     {%- elsif to_coll == 'use_cases' -%}
       {%- assign page_field = 'related_use_cases' -%}
-      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_modules' -%}
       {%- assign heading = 'Related Use Cases' -%}
       {%- assign icon = '💡' -%}
     {%- elsif to_coll == 'personas' -%}
       {%- assign page_field = 'related_personas' -%}
-      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_modules' -%}
       {%- assign heading = 'Related Personas' -%}
       {%- assign icon = '👤' -%}
     {%- elsif to_coll == 'portals' -%}
       {%- assign page_field = 'related_portals' -%}
-      {%- assign target_field = 'related_app_starter_kits' -%}
+      {%- assign target_field = 'related_modules' -%}
       {%- assign heading = 'Related Portals' -%}
       {%- assign icon = '🌐' -%}
     {%- endif -%}
@@ -138,10 +138,10 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_portals' -%}
       {%- assign heading = 'Related Personas' -%}
       {%- assign icon = '👤' -%}
-    {%- elsif to_coll == 'app_starter_kits' -%}
-      {%- assign page_field = 'related_app_starter_kits' -%}
+    {%- elsif to_coll == 'modules' -%}
+      {%- assign page_field = 'related_modules' -%}
       {%- assign target_field = 'related_portals' -%}
-      {%- assign heading = 'Related App Starter Kits' -%}
+      {%- assign heading = 'Related Modules' -%}
       {%- assign icon = '🧰' -%}
     {%- endif -%}
   {%- endif -%}

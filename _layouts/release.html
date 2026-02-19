@@ -14,7 +14,7 @@ layout: default
         {% assign parent_item = nil %}
         {% if page.parent %}
           {% comment %} choose collection that contains the parent solution {% endcomment %}
-          {% assign parent_collection = "app_starter_kits" %}
+          {% assign parent_collection = "modules" %}
           {% if page.collection == "data_model_releases" or page.collection == "data_models" %}
             {% assign parent_collection = "data_models" %}
           {% elsif page.collection == "portal_releases" or page.collection == "portals" %}
@@ -23,8 +23,8 @@ layout: default
 
           {% assign parent_item = site[parent_collection] | where: "slug", page.parent | first %}
           {% if parent_item == nil %}
-            {% if parent_collection == "app_starter_kits" %}
-              {% capture base_path %}app-starter-kits{% endcapture %}
+            {% if parent_collection == "modules" %}
+              {% capture base_path %}modules{% endcapture %}
             {% elsif parent_collection == "portals" %}
               {% capture base_path %}portals{% endcapture %}
             {% else %}

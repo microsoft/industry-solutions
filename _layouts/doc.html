@@ -15,12 +15,12 @@ layout: default
         {% if page.parent %}
         
           {% comment %} Use parent_collection from page frontmatter (set by directory-based config) {% endcomment %}
-          {% assign parent_collection = page.parent_collection | default: "app_starter_kits" %}
+          {% assign parent_collection = page.parent_collection | default: "modules" %}
 
           {% assign parent_item = site[parent_collection] | where: "slug", page.parent | first %}
           {% if parent_item == nil %}
-            {% if parent_collection == "app_starter_kits" %}
-              {% capture base_path %}app-starter-kits{% endcapture %}
+            {% if parent_collection == "modules" %}
+              {% capture base_path %}modules{% endcapture %}
             {% elsif parent_collection == "data_models" %}
               {% capture base_path %}data-models{% endcapture %}
             {% elsif parent_collection == "portals" %}
@@ -84,7 +84,7 @@ layout: default
                 {% assign parent_slug = parts[2] %}
               {% endif %}
 
-              {% assign lookup_collection = "app_starter_kits" %}
+              {% assign lookup_collection = "modules" %}
               {% if collection_segment == "data-models" %}
                 {% assign lookup_collection = "data_models" %}
               {% endif %}

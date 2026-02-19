@@ -5,7 +5,7 @@
 {%- endcomment -%}
 
 <ul class="usa-sidenav">
-  {%- assign mods = site.app_starter_kits | sort: "title" -%}
+  {%- assign mods = site.modules | sort: "title" -%}
   {%- for m in mods -%}
     <li class="usa-sidenav__item">
       <a

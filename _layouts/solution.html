@@ -10,7 +10,7 @@ layout: default
       <!-- Sidebar navigation -->
 
       <aside class="grid-col-12 tablet:grid-col-3">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} app_starter_kit image" class="page-thumbnail">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} module image" class="page-thumbnail">
         <br />
         {% if page.description %}
           <div class="usa-prose margin-bottom-2">
@@ -121,7 +121,7 @@ layout: default
               </div>
             {% endif %}
 
-            {% include related-items.html to="app_starter_kits" %}
+            {% include related-items.html to="modules" %}
             {% include related-items.html to="data_models" %}
             {% include related-items.html to="use_cases" %}
             {% include related-items.html to="personas" %}
