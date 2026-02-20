@@ -74,8 +74,6 @@ layout: default
             <section id="panel-{{ page.slug }}-erd" class="mgat-subnav__panel usa-prose" role="tabpanel"
               data-panel="{{ page.slug }}">
               
-              <p>The Asset Management module is built on a comprehensive data model that tracks assets throughout their lifecycle. The Entity Relationship Diagram (ERD) below shows the key tables and their relationships:</p>
-
               {%- comment -%}
                 Extract the first Mermaid code block from the page content (from a fenced code block),
                 and use it for both the modal and the diagram. This allows authors to use regular
@@ -86,8 +84,13 @@ layout: default
                 <textarea id="erd-mermaid-{{ page.slug }}" style="display:none;">{{ mermaid_block | strip }}</textarea>
               {% endif %}
 
-              <h2 class="margin-top-4">Tables</h2>
-              {% include tables.html %}
+              {% comment %} Find and display the data model page for this module {% endcomment %}
+              {% assign data_model_page = site.tables | where: "module", page.slug | first %}
+              {% if data_model_page %}
+                {{ data_model_page.content | markdownify }}
+              {% else %}
+                <p>Data model documentation is being developed for this module.</p>
+              {% endif %}
             </section>
 
             <!-- GUIDES panel -->
@@ -103,8 +106,12 @@ layout: default
               {% if page.release_url %}
                 <a class="usa-button" href="{{ page.release_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% else %}
-                {% assign raw_base = 'https://github.com/microsoft/gov-apptemplates/raw/main/' %}
-                <a class="usa-button" href="{{ raw_base }}modules/{{ page.slug }}/releases/{{ page.latest_release }}/MS-Gov-{{ page.slug | capitalize }}-{{ page.latest_release }}.zip" download>Download Latest Release ({{ page.latest_release }})</a>
+                {% comment %} Auto-generate download URL from module title (hyphenated) and version {% endcomment %}
+                {% assign hyphenated_title = page.title | replace: ' ', '-' %}
+                {% assign release_tag = page.slug | append: '%2F' | append: page.latest_release %}
+                {% assign filename = 'App-Base-' | append: hyphenated_title | append: '-' | append: page.latest_release | append: '.zip' %}
+                {% assign download_url = 'https://github.com/microsoft/industry-apps/releases/download/' | append: release_tag | append: '/' | append: filename %}
+                <a class="usa-button" href="{{ download_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% endif %}
             {% endif %}
 

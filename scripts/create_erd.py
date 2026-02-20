@@ -44,40 +44,56 @@ def to_sentence_case(input_string):
 
 
 def get_available_modules():
-    """Get list of available modules from the gov-datamodels sibling repo"""
+    """Get list of available modules from the industry-apps sibling repo"""
     modules = []
     
     # Get current script directory and navigate to sibling repo
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "gov-datamodels")
+    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "industry-apps")
     
-    # Check modules folder
-    modules_path = os.path.join(sibling_repo, "modules")
-    if os.path.exists(modules_path):
-        for module_name in os.listdir(modules_path):
-            module_path = os.path.join(modules_path, module_name)
-            if os.path.isdir(module_path):
-                modules.append(("modules", module_name))
+    if not os.path.exists(sibling_repo):
+        return modules
     
-    # Check cross-module folder
-    cross_modules_path = os.path.join(sibling_repo, "cross-module")
-    if os.path.exists(cross_modules_path):
-        for module_name in os.listdir(cross_modules_path):
-            module_path = os.path.join(cross_modules_path, module_name)
+    # Recursively search through category folders for modules
+    # Skip special folders that start with . or are known non-category folders
+    skip_folders = {'.config', '.design', '.git', '.gitignore', '.scripts', '.vscode', 
+                    'bin', 'obj', 'deployment-ui', 'shared'}
+    
+    for category_name in os.listdir(sibling_repo):
+        category_path = os.path.join(sibling_repo, category_name)
+        
+        # Skip if not a directory or in skip list
+        if not os.path.isdir(category_path) or category_name in skip_folders:
+            continue
+        
+        # Look for modules in this category folder
+        for module_name in os.listdir(category_path):
+            module_path = os.path.join(category_path, module_name)
+            
+            # Verify it's a valid module by checking for src/Entities folder
             if os.path.isdir(module_path):
-                modules.append(("cross-module", module_name))
+                entities_path = os.path.join(module_path, "src", "Entities")
+                if os.path.exists(entities_path):
+                    # Store as (category/module_name, module_name) for easy lookup
+                    relative_path = os.path.join(category_name, module_name)
+                    modules.append((relative_path, module_name))
     
     return modules
 
 
-def get_module_path(module_type, module_name):
-    """Get the full path to a module in the gov-datamodels repo"""
+def get_module_path(relative_path, module_name):
+    """Get the full path to a module in the industry-apps repo
+    
+    Args:
+        relative_path: The relative path from industry-apps root (e.g., 'operations/asset-management')
+        module_name: The module name (kept for compatibility)
+    """
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "gov-datamodels")
-    return os.path.join(sibling_repo, module_type, module_name)
+    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "industry-apps")
+    return os.path.join(sibling_repo, relative_path)
 
 
-def read_entities(module_type: str, module_name: str):
+def read_entities(relative_path: str, module_name: str):
     """Read entities from the specified module"""
     tables = []
 
@@ -100,8 +116,8 @@ def read_entities(module_type: str, module_name: str):
         "UTCConversionTimeZoneCode",
     ]
 
-    # Get path to the module in gov-datamodels repo
-    module_path = get_module_path(module_type, module_name)
+    # Get path to the module in industry-apps repo
+    module_path = get_module_path(relative_path, module_name)
     entities_folder = os.path.join(module_path, "src", "Entities")
 
     if not os.path.exists(entities_folder):
@@ -208,9 +224,9 @@ def read_relationships(entity_name, relationships_folder):
     return relationships
 
 
-def read_all_relationships(module_type: str, module_name: str):
+def read_all_relationships(relative_path: str, module_name: str):
     """Read all relationships for the specified module"""
-    module_path = get_module_path(module_type, module_name)
+    module_path = get_module_path(relative_path, module_name)
     source_folder = os.path.join(module_path, "src", "Other", "Relationships")
 
     all_relationships = []
@@ -257,37 +273,37 @@ def get_output_path(module_name: str):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     repo_root = os.path.dirname(current_dir)
     
-    # Convert module name to match the naming convention in _data_models
+    # Convert module name to match the naming convention
     # Replace underscores and convert to lowercase with hyphens
     file_name = module_name.lower().replace("_", "-").replace(" ", "-")
     
-    # Output to .temp folder instead of _data_models
-    return os.path.join(repo_root, ".temp", f"{file_name}.md")
+    # Output to .temp folder for review before updating module documentation
+    return os.path.join(repo_root, ".temp", f"erd-{file_name}.md")
 
 
-def document_module(module_type: str, module_name: str):
+def document_module(relative_path: str, module_name: str):
     """Generate documentation for the specified module"""
-    print(f"Processing module: {module_name} (from {module_type})")
+    print(f"Processing module: {module_name} (from {relative_path})")
     
-    tables = read_entities(module_type, module_name)
-    relationships = read_all_relationships(module_type, module_name)
+    tables = read_entities(relative_path, module_name)
+    relationships = read_all_relationships(relative_path, module_name)
 
     print(f"Found {len(tables)} entities and {len(relationships)} relationships")
 
     # Convert module name for display (replace hyphens with spaces and title case)
     display_name = module_name.replace("-", " ").title()
     
-    markdown = f"# Government Common Data Model - {display_name}"
-    markdown += "\n\n"
+    markdown = f"# {display_name} - Entity Relationship Diagram\n"
+    markdown += "---\n\n"
 
-    markdown += "# Entity Relationship Diagram\n"
+    markdown += "## Entity Relationship Diagram\n"
     markdown += "---\n\n"
     mermaid = render_mermaid(tables, relationships)
-    markdown += f"::: mermaid\n{mermaid}\n:::\n\n"
+    markdown += f"```mermaid\n{mermaid}```\n\n"
 
     for table in tables:
         markdown += "\n"
-        markdown += "# " + table["display_name"] + "\n"
+        markdown += "## " + table["display_name"] + "\n"
         markdown += "---\n\n"
         markdown += "**Metadata**\n\n"
         markdown += "- Schema: " + table["schema_name"] + "\n\n"
@@ -299,7 +315,7 @@ def document_module(module_type: str, module_name: str):
             markdown += "  - Type: " + field.get("dataverse_type", "N/A") + "\n"
             markdown += "  - Schema: " + field["schema_name"] + "\n"
 
-    # Save to the .temp folder in gov-solutions repo
+    # Save to the .temp folder in industry-solutions repo
     output_path = get_output_path(module_name)
     
     # Ensure the directory exists
@@ -307,38 +323,41 @@ def document_module(module_type: str, module_name: str):
     
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(markdown)
-        print(f"Generated documentation saved to: {output_path}")
-        print(f"Review the file and use it to update the corresponding file in _data_models/")
+        print(f"\n✓ Generated documentation saved to: {output_path}")
+        print(f"Review the ERD diagram and use it to update the module's documentation in _modules/")
 
 
-def get_modules_by_type(module_type):
-    """Get modules from a specific type (modules or cross-module)"""
+def get_modules_by_category(category_name):
+    """Get modules from a specific category folder"""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "gov-datamodels")
+    sibling_repo = os.path.join(os.path.dirname(current_dir), "..", "industry-apps")
     
-    modules_path = os.path.join(sibling_repo, module_type)
+    category_path = os.path.join(sibling_repo, category_name)
     modules = []
     
-    if os.path.exists(modules_path):
-        for module_name in os.listdir(modules_path):
-            module_path = os.path.join(modules_path, module_name)
+    if os.path.exists(category_path):
+        for module_name in os.listdir(category_path):
+            module_path = os.path.join(category_path, module_name)
             if os.path.isdir(module_path):
-                modules.append(module_name)
+                # Verify it has the expected structure
+                entities_path = os.path.join(module_path, "src", "Entities")
+                if os.path.exists(entities_path):
+                    modules.append((os.path.join(category_name, module_name), module_name))
     
-    return sorted(modules)
+    return sorted(modules, key=lambda x: x[1])
 
 
 def main():
     """Main function to handle user input and module selection"""
-    print("Government Common Data Model Documentation Generator")
+    print("Industry Apps ERD Documentation Generator")
     print("=" * 55)
     
     # Get available modules
     available_modules = get_available_modules()
     
     if not available_modules:
-        print("No modules found in the gov-datamodels repository.")
-        print("Make sure the gov-datamodels repository exists as a sibling to this repository.")
+        print("No modules found in the industry-apps repository.")
+        print("Make sure the industry-apps repository exists as a sibling to this repository.")
         return
     
     # Check for command line argument
@@ -346,71 +365,78 @@ def main():
         module_arg = sys.argv[1].lower().replace("_", "-").replace(" ", "-")
         
         # Find matching module
-        for module_type, module_name in available_modules:
+        for relative_path, module_name in available_modules:
             if module_name.lower().replace("_", "-").replace(" ", "-") == module_arg:
-                document_module(module_type, module_name)
+                document_module(relative_path, module_name)
                 return
         
         print(f"Module '{sys.argv[1]}' not found.")
         print("Available modules:")
-        for i, (module_type, module_name) in enumerate(available_modules, 1):
-            print(f"  {i}. {module_name} (from {module_type})")
+        for i, (relative_path, module_name) in enumerate(available_modules, 1):
+            category = relative_path.split(os.sep)[0]
+            print(f"  {i}. {module_name} (from {category})")
         return
     
-    # Interactive mode - first select module type
-    print("\nSelect module type:")
-    print("  1. Standard Modules")
-    print("  2. Cross-Module Solutions")
+    # Interactive mode - get all categories
+    categories = {}
+    for relative_path, module_name in available_modules:
+        category = relative_path.split(os.sep)[0]
+        if category not in categories:
+            categories[category] = []
+        categories[category].append((relative_path, module_name))
+    
+    category_list = sorted(categories.keys())
+    
+    # Show category selection
+    print("\nSelect a category:")
+    for i, category in enumerate(category_list, 1):
+        count = len(categories[category])
+        print(f"  {i}. {category.replace('-', ' ').title()} ({count} modules)")
     print("  0. Exit")
     
     while True:
         try:
-            type_choice = input("\nSelect module type (1-2) or 0 to exit: ").strip()
+            type_choice = input(f"\nSelect category (1-{len(category_list)}) or 0 to exit: ").strip()
             
             if type_choice == "0":
                 print("Exiting...")
                 return
-            elif type_choice == "1":
-                selected_type = "modules"
-                type_display = "Standard Modules"
-                break
-            elif type_choice == "2":
-                selected_type = "cross-module"
-                type_display = "Cross-Module Solutions"
+            
+            choice_num = int(type_choice)
+            if 1 <= choice_num <= len(category_list):
+                selected_category = category_list[choice_num - 1]
                 break
             else:
-                print("Please enter 1, 2, or 0.")
+                print(f"Please enter a number between 1 and {len(category_list)}, or 0 to exit.")
+        except ValueError:
+            print("Please enter a valid number.")
         except KeyboardInterrupt:
             print("\nExiting...")
             return
     
-    # Get modules for selected type
-    modules = get_modules_by_type(selected_type)
+    # Get modules for selected category
+    modules = categories[selected_category]
     
-    if not modules:
-        print(f"No modules found in {selected_type} folder.")
-        return
-    
-    # Show modules for selected type
-    print(f"\nAvailable {type_display}:")
-    for i, module_name in enumerate(modules, 1):
+    # Show modules for selected category
+    print(f"\nAvailable modules in {selected_category.replace('-', ' ').title()}:")
+    for i, (relative_path, module_name) in enumerate(modules, 1):
         print(f"  {i}. {module_name}")
     
-    print(f"  0. Back to module type selection")
+    print(f"  0. Back to category selection")
     
     while True:
         try:
             choice = input(f"\nSelect a module (1-{len(modules)}) or 0 to go back: ").strip()
             
             if choice == "0":
-                # Restart the main function to go back to type selection
+                # Restart the main function to go back to category selection
                 main()
                 return
             
             choice_num = int(choice)
             if 1 <= choice_num <= len(modules):
-                selected_module = modules[choice_num - 1]
-                document_module(selected_type, selected_module)
+                relative_path, module_name = modules[choice_num - 1]
+                document_module(relative_path, module_name)
                 break
             else:
                 print(f"Please enter a number between 1 and {len(modules)}, or 0 to go back.")

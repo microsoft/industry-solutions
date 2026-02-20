@@ -1,11 +1,14 @@
 ---
-title: Table Name
-description: "Description of what this table is for, key fields included."
-parent: <parent>
+title: "{Module Name} Data Model"
+module: module-slug
 ---
 
-## Fields
+Brief description of this data model and its purpose.
 
-| Field Name   | Type     | Schema              |
-|--------------|----------|---------------------|
-| Name         | Nvarchar | govcdm_name         |
+## Tables
+
+### Table Name
+Description of the table and its purpose.
+
+### Another Table
+Description of another table.
