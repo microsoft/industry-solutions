@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Welcome to FAST - Industry Solutions"
+title: "Welcome to FAST (Frontier App & AI Starter Templates)"
 date: 2026-02-19
 tags: [announcements]
 ---

@@ -1,8 +1,8 @@
-# FAST - Flexible Application Solution Templates
+# FAST - Frontier App & AI Starter Templates
 
 This repository is an open-source ecosystem for building enterprise applications on Microsoft Power Platform and Dynamics 365. It provides reusable, modular building blocks that help organizations deliver solutions more quickly and with greater consistency.
 
-**FAST** stands for **Flexible Application Solution Templates**, and each module includes standardized data models, prebuilt applications, comprehensive documentation, and release packages — all available under the MIT license.
+**FAST** stands for **Frontier App & AI Starter Templates**, and each module includes standardized data models, prebuilt applications, comprehensive documentation, and release packages — all available under the MIT license.
 
 This documentation site serves as the hub for the **[FAST Modules Repository](https://github.com/microsoft/industry-apps)**, which contains the source code, releases, and contribution guidelines.
 
