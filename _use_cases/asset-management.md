@@ -3,6 +3,11 @@ title: Asset Management
 description: "Guidance for managing organizational assets throughout their lifecycle: inventory, tracking, maintenance, compliance, and optimization."
 layout: use_case
 thumbnail: /assets/use_cases/asset-management.png
+related_modules:
+  - asset-management
+  - core
+related_personas:
+  - chief-information-officer
 ---
 
 ## Overview

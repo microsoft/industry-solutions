@@ -3,9 +3,15 @@ title: Chief Information Officer
 description: Senior executive responsible for the strategy, governance, and delivery of information technology (IT)
 layout: persona
 thumbnail: /assets/personas/cio2.png
+related_modules:
+  - asset-management
+  - executive-coordination
+  - core
 related_use_cases:
- - case-management
- - personnel-security
+  - case-management
+  - personnel-security
+  - asset-management
+  - executive-coordination
 ---
 
 A Chief Information Officer (CIO) is the senior executive responsible for the strategy, governance, and delivery of information technology (IT) and digital services across an organization. The CIO ensures that technology investments align with organizational priorities, comply with applicable mandates, and deliver secure, efficient, and user-focused services.

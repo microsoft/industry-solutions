@@ -57,7 +57,7 @@ def get_available_modules():
     # Recursively search through category folders for modules
     # Skip special folders that start with . or are known non-category folders
     skip_folders = {'.config', '.design', '.git', '.gitignore', '.scripts', '.vscode', 
-                    'bin', 'obj', 'deployment-ui', 'shared'}
+                    'bin', 'obj', 'deployment-ui'}
     
     for category_name in os.listdir(sibling_repo):
         category_path = os.path.join(sibling_repo, category_name)
@@ -245,19 +245,91 @@ def read_all_relationships(relative_path: str, module_name: str):
     return all_relationships
 
 
+def get_all_entity_names():
+    """Build a map of entity schema names to display names from core module"""
+    entity_map = {}
+    
+    # Only scan the core module for common external entities
+    # This is much faster than scanning all modules
+    available_modules = get_available_modules()
+    
+    for relative_path, module_name in available_modules:
+        # Only process core module
+        if module_name != "core":
+            continue
+            
+        try:
+            module_tables = read_entities(relative_path, module_name)
+            for table in module_tables:
+                schema_name = table.get("schema_name")
+                display_name = table.get("display_name")
+                if schema_name and display_name:
+                    entity_map[schema_name] = display_name
+        except Exception:
+            # Skip modules that can't be read
+            continue
+    
+    return entity_map
+
+
+def get_display_name(schema_name: str, entity_map: dict) -> str:
+    """Get display name for an entity, with fallback to cleaned schema name"""
+    if schema_name in entity_map:
+        return entity_map[schema_name]
+    
+    # Fallback: clean up schema name
+    # Remove common prefixes
+    clean_name = schema_name
+    for prefix in ["appbase_", "msdyn_", "msemr_"]:
+        if clean_name.startswith(prefix):
+            clean_name = clean_name[len(prefix):]
+            break
+    
+    # Convert camelCase to Title Case with spaces
+    import re
+    # Insert space before uppercase letters
+    clean_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', clean_name)
+    # Title case
+    clean_name = clean_name.title()
+    
+    return clean_name
+
+
 def render_mermaid(tables: list, relationships: list):
     """Render Mermaid diagram from tables and relationships"""
     mermaid_str = "graph TD\n"
 
-    # Add tables (nodes)
-    for table in tables:
-        schema_name = table["schema_name"]
-        display_name = table["display_name"]
-        mermaid_str += f"  {schema_name}({display_name})\n"
-
-    render_relationships = [
-        rel for rel in relationships if rel["to"] not in ["Owner", "SystemUser", "Team", "BusinessUnit"]
+    # Filter out relationships to common reference tables to reduce diagram complexity
+    excluded_targets = [
+        "Owner", "SystemUser", "Team", "BusinessUnit",
+        "Contact", "appbase_OrganizationUnit", "TransactionCurrency", 
+        "Location", "appbase_Location", "Account"
     ]
+    
+    render_relationships = [
+        rel for rel in relationships if rel["to"] not in excluded_targets
+    ]
+
+    # Collect all entities that appear in the filtered relationships
+    entities_in_use = set()
+    for rel in render_relationships:
+        entities_in_use.add(rel["from"])
+        entities_in_use.add(rel["to"])
+
+    # Build entity name map for external entities
+    entity_map = get_all_entity_names()
+    
+    # Create a map of schema names to display names from current module tables
+    local_entity_map = {table["schema_name"]: table["display_name"] for table in tables}
+    
+    # Add all entities that appear in filtered relationships
+    for entity in sorted(entities_in_use):
+        if entity in local_entity_map:
+            display_name = local_entity_map[entity]
+        else:
+            display_name = get_display_name(entity, entity_map)
+        
+        mermaid_str += f"  {entity}({display_name})\n"
 
     # Add relationships (edges)
     for rel in render_relationships:

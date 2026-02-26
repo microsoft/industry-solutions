@@ -3,8 +3,6 @@ title: "Asset Management Data Model"
 module: asset-management
 ---
 
-The **Asset Management** module provides a structured way to register, track, and govern physical assets across their full lifecycle—from acquisition through assignment, service, audit, and disposition. It supports clear separation of legal ownership and operational assignment, maintains a custody history for accountability, logs service activity for operational visibility, and enables periodic inventory audits and inspection requirements for compliance. Financial context can be captured through acquisition and cost tracking, while disposition records ensure defensible retirement and disposal documentation. Typical use cases include managing IT equipment issuance, fleet and vehicle tracking, facilities and field equipment oversight, grant-funded asset accountability, regulated inspection programs, and annual inventory verification across departments or locations.
-
 ## Tables
 
 ### Asset

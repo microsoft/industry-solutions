@@ -3,8 +3,6 @@ title: "{Module Name} Data Model"
 module: module-slug
 ---
 
-Brief description of this data model and its purpose.
-
 ## Tables
 
 ### Table Name

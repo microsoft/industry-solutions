@@ -3,6 +3,11 @@ title: HR Administrator
 description: Manages the employee lifecycle and HR operations for an organization
 layout: persona
 thumbnail: /assets/personas/hr-admin.png
+related_modules:
+  - hr-administration
+  - core
+related_use_cases:
+  - hr-administration
 ---
 
 A HR Administrator is responsible for day-to-day human resources operations that support an organization's workforce. They ensure accurate personnel records, timely onboarding and offboarding, benefits and payroll administration, and that HR processes comply with applicable laws and policies.

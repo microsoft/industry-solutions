@@ -3,6 +3,11 @@ title: Executive Coordination
 description: "Guidance for managing, tracking, and evaluating high-level directives, taskers, and executive actions: workflows, accountability, and cross-organizational coordination."
 layout: use_case
 thumbnail: /assets/use_cases/executive-coordination.png
+related_modules:
+  - executive-coordination
+  - core
+related_personas:
+  - chief-information-officer
 ---
 
 ## Overview
