@@ -1,7 +1,7 @@
 ---
 title: "Core"
 description: "Foundational module providing shared entities for organizational structure, people management, governance, legal compliance, risk management, and content documentation."
-latest_release: v1.1.0.0
+latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/core.png
 required_modules: []
 required_data_models:

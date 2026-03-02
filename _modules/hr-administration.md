@@ -1,7 +1,7 @@
 ---
 title: "HR Administration"
 description: "Manage HR positions, employment actions, time off, workplace requests, and employee compliance with comprehensive workforce administration capabilities."
-latest_release: v1.1.0.0
+latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/hr-administration.png
 required_modules:
  - core
