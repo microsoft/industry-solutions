@@ -19,6 +19,22 @@ Behavior:
 
   <nav class="mgat-subnav" role="tablist" aria-label="Sections ({{ _ns }})" data-subnav="{{ _ns }}" {% if _default_tab
     %} data-default="{{ _default_tab }}" {% endif %}>
+    
+    {%- comment -%} Mobile dropdown for small screens {%- endcomment -%}
+    <select class="mgat-subnav__select" data-ns="{{ _ns }}" aria-label="Select section">
+      {%- for spec in _tab_specs -%}
+      {%- assign parts = spec | split: ':' -%}
+      {%- assign label = parts[0] | strip -%}
+      {%- assign show_keys = parts[1] | strip | split: ',' -%}
+      {%- assign show_attr = show_keys | join: ',' -%}
+      {%- assign key0 = show_keys[0] | strip -%}
+      <option value="{{ show_attr }}" {% if _default_tab and _default_tab != '' and _default_tab == key0 %}selected{% elsif _default_tab == nil and forloop.first %}selected{% endif %}>
+        {{ label }}
+      </option>
+      {%- endfor -%}
+    </select>
+    
+    {%- comment -%} Desktop tabs for larger screens {%- endcomment -%}
     <ul class="mgat-subnav__list">
       {%- for spec in _tab_specs -%}
       {%- assign parts = spec | split: ':' -%}
@@ -47,6 +63,7 @@ Behavior:
 
         var links = Array.prototype.slice.call(subnav.querySelectorAll('.mgat-subnav__link[data-ns="' + ns + '"]'));
         var panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel="' + ns + '"]'));
+        var select = subnav.querySelector('.mgat-subnav__select[data-ns="' + ns + '"]');
 
         if (!links.length) return;
 
@@ -61,6 +78,8 @@ Behavior:
             a.setAttribute('aria-selected', String(isActive));
             if (focusLink && isActive) a.focus();
           });
+          // Update select dropdown
+          if (select) select.value = keysCSV;
           // Hide all panels for this namespace, show only requested
           panels.forEach(function (p) { p.hidden = true; });
           keys.forEach(function (k) {
@@ -135,6 +154,13 @@ Behavior:
           e.preventDefault();
           showByKeys(a.getAttribute('data-target'), true);
         });
+
+        // Mobile dropdown change
+        if (select) {
+          select.addEventListener('change', function (e) {
+            showByKeys(e.target.value);
+          });
+        }
 
         // Keyboard (Left/Right/Home/End)
         subnav.addEventListener('keydown', function (e) {
