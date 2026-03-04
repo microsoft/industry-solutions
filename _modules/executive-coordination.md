@@ -3,6 +3,7 @@ title: "Executive Coordination"
 description: "Track and manage high-level directives, executive actions, and taskers with structured coordination, accountability tracking, and decision documentation."
 latest_release: v1.1.0.0
 thumbnail: /assets/use_cases/executive-coordination.png
+module_category: administrative
 required_modules:
  - core
 required_data_models:
@@ -11,6 +12,10 @@ related_use_cases:
   - executive-coordination
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: gov-data.zip
+    name: Government Sample Data
+    description: Sample executive actions, directives, and taskers representing typical government coordination scenarios including policy implementation and compliance actions.
 ---
 
 The **Executive Coordination** module provides a structured way to issue, assign, track, and evaluate executive actions, directives, and high-level taskers that require coordinated response across organizational units. It provides data entry forms and views for documenting action requirements, assigning accountability, managing dependencies, capturing decisions, and reporting progress through completion. Links to legal authorities, agreements, strategic initiatives, risk assessments, and impact analyses provide supporting context, while executive status updates maintain visibility into action health and completion.

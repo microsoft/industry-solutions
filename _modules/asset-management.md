@@ -3,6 +3,7 @@ title: "Asset Management"
 description: "Track, categorize, and manage organizational assets with a modern, reusable solution for accountability and lifecycle management."
 latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/asset-management.png
+module_category: operations
 required_modules:
  - core
 required_data_models:
@@ -11,6 +12,10 @@ related_use_cases:
   - asset-management
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample asset data for organizations including IT equipment, vehicles, and facilities.
 ---
 
 The **Asset Management** module provides a structured way to register, track, and govern physical assets across their full lifecycle, from acquisition through assignment, service, audit, and disposition. It provides data entry forms and views for capturing ownership and operational assignment details, maintaining custody history for accountability, logging service activity for operational visibility, and recording inventory audits and inspection requirements for compliance. Financial context can be captured through acquisition and cost tracking, while disposition records ensure defensible retirement and disposal documentation. 

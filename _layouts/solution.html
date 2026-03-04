@@ -61,7 +61,7 @@ layout: default
 
             {% include tabs.html
             ns=page.slug
-            tabs="Overview:overview|Data Model:erd|How-to / Guides:guides"
+            tabs="Overview:overview|Screenshots:screenshots|Data Model:erd|Sample Data:sample-data|How-to / Guides:guides"
             %}
 
             <!-- OVERVIEW panel -->
@@ -90,6 +90,40 @@ layout: default
                 {{ data_model_page.content | markdownify }}
               {% else %}
                 <p>Data model documentation is being developed for this module.</p>
+              {% endif %}
+            </section>
+
+            <!-- SCREENSHOTS panel -->
+            <section id="panel-{{ page.slug }}-screenshots" class="mgat-subnav__panel usa-prose" role="tabpanel"
+              data-panel="{{ page.slug }}">
+              {% assign screenshot_file = '/assets/modules/' | append: page.slug | append: '/overview.png' %}
+              {% assign screenshot_exists = site.static_files | where: "path", screenshot_file | first %}
+              {% if screenshot_exists %}
+                <img src="{{ screenshot_file | relative_url }}" alt="{{ page.title }} module screenshot" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;" />
+              {% else %}
+                <p>Screenshots are being developed for this module. Check back soon for visual previews of the module interface.</p>
+              {% endif %}
+            </section>
+
+            <!-- SAMPLE DATA panel -->
+            <section id="panel-{{ page.slug }}-sample-data" class="mgat-subnav__panel usa-prose" role="tabpanel"
+              data-panel="{{ page.slug }}">
+              {% if page.sample_data and page.module_category %}
+                <p>Use the <a href="https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/data" target="_blank" rel="noopener noreferrer">pac data CLI command</a> or the <a href="https://learn.microsoft.com/en-us/power-platform/admin/manage-configuration-data" target="_blank" rel="noopener noreferrer">Configuration Migration tool</a> to import sample data into your environment.</p>
+                
+                {% for sample in page.sample_data %}
+                  {% assign sample_url = 'https://github.com/microsoft/industry-apps/tree/main/' | append: page.module_category | append: '/' | append: page.slug | append: '/sample-data/' | append: sample.filename %}
+                  <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 0.5rem;">
+                      📦 <a href="{{ sample_url }}" target="_blank" rel="noopener noreferrer">{{ sample.name }}</a>
+                    </h3>
+                    {% if sample.description %}
+                      <p style="margin-top: 0.5rem; color: #565c65;">{{ sample.description }}</p>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p>Sample data files are being prepared for this module. Check back soon for downloadable datasets to help you get started.</p>
               {% endif %}
             </section>
 

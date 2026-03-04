@@ -3,6 +3,7 @@ title: "HR Administration"
 description: "Manage HR positions, employment actions, time off, workplace requests, and employee compliance with comprehensive workforce administration capabilities."
 latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/hr-administration.png
+module_category: workforce
 required_modules:
  - core
 required_data_models:
@@ -11,6 +12,10 @@ related_use_cases:
   - hr-administration
 related_personas:
   - hr-administrator
+sample_data:
+  - filename: gov-data.zip
+    name: Government Sample Data
+    description: Sample HR data including positions, employment actions, leave requests, and compliance records following government classification and pay grade structures.
 ---
 
 The **HR Administration** module provides a comprehensive system for managing workforce positions, employment actions, time and attendance, employee requests, and compliance documentation. It provides data entry forms and views for establishing position structures, processing personnel actions, managing time off and telework requests, documenting workplace accommodations, tracking disciplinary matters, and maintaining employee declarations. Integration with job classifications, pay grades, clearance requirements, and organizational structure ensures consistent workforce management aligned with classification standards and governance requirements.

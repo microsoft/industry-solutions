@@ -3,10 +3,15 @@ title: "Core"
 description: "Foundational module providing shared entities for organizational structure, people management, governance, legal compliance, risk management, and content documentation."
 latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/core.png
+module_category: shared
 required_modules: []
 required_data_models:
   - core
 related_use_cases: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample foundational data including organization units, locations, legal authorities, compliance frameworks, and governance structures typical for enterprise organizations.
 ---
 
 The **Core** module provides foundational entities and reference data structures used across all industry solution modules. It establishes common organizational constructs, people and workforce taxonomy, governance and decision frameworks, legal and compliance structures, risk and impact tracking, content management, and privacy consent capabilities. Rather than providing standalone business functionality, Core serves as the shared foundation that other modules extend and reference for consistent data structures, standardized classifications, and enterprise-wide reference data.
