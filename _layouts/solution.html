@@ -99,7 +99,13 @@ layout: default
               {% assign screenshot_file = '/assets/modules/' | append: page.slug | append: '/overview.png' %}
               {% assign screenshot_exists = site.static_files | where: "path", screenshot_file | first %}
               {% if screenshot_exists %}
-                <img src="{{ screenshot_file | relative_url }}" alt="{{ page.title }} module screenshot" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;" />
+                <img src="{{ screenshot_file | relative_url }}" 
+                     alt="{{ page.title }} module screenshot" 
+                     class="module-screenshot-thumbnail"
+                     data-screenshot="{{ screenshot_file | relative_url }}"
+                     style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;" 
+                     title="Click to enlarge" />
+                <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #71767a;"><em>Note: All data shown in screenshots is fictitious and for demonstration purposes only.</em></p>
               {% else %}
                 <p>Screenshots are being developed for this module. Check back soon for visual previews of the module interface.</p>
               {% endif %}
@@ -190,3 +196,58 @@ layout: default
 </div>
 
 <script src="{{ '/assets/js/erd-modal.js' | relative_url }}" defer></script>
+
+{% comment %} Screenshot modal {% endcomment %}
+<div id="screenshot-modal" class="erd-modal" aria-hidden="true" role="dialog" aria-labelledby="screenshot-modal-title" tabindex="-1" style="display: none;">
+  <div class="erd-modal__backdrop" onclick="closeScreenshotModal()"></div>
+  <div class="erd-modal__dialog" role="document" style="max-width: 90vw; max-height: 80vh; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column;">
+    <header class="erd-modal__header" style="flex-shrink: 0;">
+      <h2 id="screenshot-modal-title">Screenshot</h2>
+      <button class="erd-modal__close" aria-label="Close screenshot" onclick="closeScreenshotModal()">&times;</button>
+    </header>
+    <div class="erd-modal__content" style="padding: 0; overflow: auto; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <img id="screenshot-modal-image" src="" alt="" style="max-width: 100%; max-height: 100%; height: auto; width: auto; object-fit: contain;" />
+      <p style="margin-top: 1rem; padding: 0 1rem; font-size: 0.875rem; color: #71767a; text-align: center;"><em>Note: All data shown is fictitious and for demonstration purposes only.</em></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openScreenshotModal(src, alt) {
+    const modal = document.getElementById('screenshot-modal');
+    const img = document.getElementById('screenshot-modal-image');
+    const title = document.getElementById('screenshot-modal-title');
+    
+    img.src = src;
+    img.alt = alt;
+    title.textContent = alt;
+    
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeScreenshotModal() {
+    const modal = document.getElementById('screenshot-modal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  
+  // Add click handlers to screenshot thumbnails
+  document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.module-screenshot-thumbnail');
+    thumbnails.forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        openScreenshotModal(this.dataset.screenshot || this.src, this.alt);
+      });
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeScreenshotModal();
+      }
+    });
+  });
+</script>
