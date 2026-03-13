@@ -1,7 +1,7 @@
 ---
 title: "Court Case Management"
 description: "Manage legal matters through the court system with comprehensive case tracking, docket management, hearing scheduling, and judicial decision documentation."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/court-case-management.png
 module_category: government
 required_modules:

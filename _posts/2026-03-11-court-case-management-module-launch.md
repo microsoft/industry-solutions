@@ -22,13 +22,14 @@ Key capabilities include:
 
 ## What's Included
 
-This initial release (v1.0.0.0) provides the foundational data model:
+This model-driven app starter kit includes:
 
 - **10 entities** providing comprehensive court case lifecycle management
+- **Main forms and active views** for case tracking, hearing scheduling, and decision documentation
 - **Sample data** to demonstrate typical court case scenarios and use cases
 - **Integration with Core module** for judicial districts, legal authorities, document management, and compliance frameworks
 
-Forms and views for case tracking, hearing scheduling, and decision documentation will be available in an upcoming release. The module provides implementors with a baseline data structure that can be customized for trial courts, appellate courts, administrative hearing offices, and other judicial or quasi-judicial bodies.
+The module provides implementors with a baseline court case management application that can be customized for trial courts, appellate courts, administrative hearing offices, and other judicial or quasi-judicial bodies.
 
 ## Getting Started
 
