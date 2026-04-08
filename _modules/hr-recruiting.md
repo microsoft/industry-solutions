@@ -12,6 +12,9 @@ related_use_cases:
   - Recruiting and Onboarding
 related_personas:
   - hr-administrator
+contributors:
+  - name: Tim Hanewich
+    url: https://TimHanewich.github.io
 ---
 
 The **HR Recruiting module** enables organizations to manage the complete hiring process from initial workforce requests through final candidate selection and offer management. It provides structured workflows for requisition management, candidate tracking, evaluation, and selection across public sector, corporate, and regulated hiring environments.
