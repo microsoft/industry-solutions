@@ -10,6 +10,9 @@ required_data_models:
   - hr-benefits
 related_use_cases: []
 related_personas: []
+contributors:
+  - name: Pallavi Bondre
+    url: https://www.linkedin.com/in/pallavi-bondre/
 ---
 
 The **HR Benefits** module provides a structured data model for managing the full lifecycle of employee benefit offerings from plan design and eligibility configuration to enrollment, life event changes, and cost administration. The data model supports defining benefit plans with options and coverage levels, managing benefit providers and service agreements, configuring eligibility rules and waiting periods, establishing enrollment periods for open enrollment and new hires, processing benefit enrollments with elections and beneficiary designations, handling qualifying life event changes, administering contribution rates for employer and employee costs, tracking cost allocations across funds and departments, maintaining deduction codes for payroll integration, and processing benefit-related claims or reimbursements with effective dating, auditability, and structured benefit governance.
