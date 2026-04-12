@@ -1,7 +1,7 @@
 ---
 title: "IT Service Management"
 description: "Manage IT service delivery, access control, system inventory, technology standards, and compliance oversight in a unified framework."
-latest_release: v1.1.0.0
+latest_release: v1.2.0.0
 thumbnail: "assets/use_cases/it-service-management.png"
 module_category: operations
 required_modules:

@@ -1,7 +1,7 @@
 ---
 title: "Asset Management"
 description: "Track, categorize, and manage organizational assets with a modern, reusable solution for accountability and lifecycle management."
-latest_release: v1.1.1.0
+latest_release: v1.2.0.0
 thumbnail: /assets/use_cases/asset-management.png
 module_category: operations
 required_modules:

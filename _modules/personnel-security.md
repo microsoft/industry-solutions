@@ -1,7 +1,7 @@
 ---
 title: "Personnel Security"
 description: "Manage the lifecycle of evaluating, granting, monitoring, and enforcing trust-based access through security reviews, investigations, adjudications, and credentials."
-latest_release: v1.1.0.0
+latest_release: v1.2.0.0
 thumbnail: "assets/use_cases/personnel-security.png"
 module_category: compliance-security
 required_modules:

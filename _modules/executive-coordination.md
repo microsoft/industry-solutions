@@ -1,7 +1,7 @@
 ---
 title: "Executive Coordination"
 description: "Track and manage high-level directives, executive actions, and taskers with structured coordination, accountability tracking, and decision documentation."
-latest_release: v1.1.0.0
+latest_release: v1.2.0.0
 thumbnail: /assets/use_cases/executive-coordination.png
 module_category: administrative
 required_modules:

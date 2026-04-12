@@ -1,7 +1,7 @@
 ---
 title: "Core"
 description: "Foundational module providing shared entities for organizational structure, people management, governance, legal compliance, risk management, and content documentation."
-latest_release: v1.1.2.0
+latest_release: v1.2.0.0
 thumbnail: /assets/use_cases/core.png
 module_category: shared
 required_modules: []
@@ -20,7 +20,7 @@ All industry solution modules depend on Core and leverage its entities to mainta
 
 ## Using the Module
 
-The module provides foundational data structures organized into several functional areas that can be referenced and extended by specialized business modules.
+The module establishes foundational data structures organized into several functional areas that can be referenced and extended by specialized business modules.
 
 **Organizational Structure** is established through **Organization Units** representing departments, divisions, programs, or teams with hierarchical relationships via organization unit type assignments and parent organization unit references. **Accounts** provide external organization references for partners, vendors, or member organizations. **Locations** capture physical places (sites, buildings, rooms) with address details, country and state/province references, and location hierarchies. **Organization Initiatives** document strategic efforts, programs, or campaigns with parent initiative relationships enabling initiative portfolio management. **Judicial Districts** support government and legal scenarios with district codes, jurisdiction levels, presiding judge assignments, and state/province context.
 

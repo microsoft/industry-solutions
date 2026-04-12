@@ -1,7 +1,7 @@
 ---
 title: "Time, Travel, and Expenses"
 description: "Capture time worked, plan personnel availability, authorize travel, and submit reimbursable expenses with unified time tracking, travel management, and expense reporting."
-latest_release: v1.1.0.0
+latest_release: v1.2.0.0
 thumbnail: "assets/use_cases/time-travel-expenses.png"
 module_category: workforce
 required_modules:

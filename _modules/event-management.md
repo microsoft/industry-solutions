@@ -1,7 +1,7 @@
 ---
 title: "Event Management"
 description: "Plan, organize, and execute events with comprehensive registration, session scheduling, participant tracking, and sponsorship management."
-latest_release: v1.1.0.0
+latest_release: v1.2.0.0
 thumbnail: /assets/use_cases/event-management.png
 module_category: external-engagement
 required_modules:
@@ -12,13 +12,13 @@ related_use_cases: []
 related_personas: []
 ---
 
-The **Event Management** module provides a structured data model for planning, organizing, and executing events of all types and scales. The data model supports defining events with classification and scheduling, managing participant registration and tracking across multiple roles, organizing sessions into thematic tracks with time blocks and locations, capturing presentation and exhibition submissions with review workflows, coordinating event sponsors and partnership arrangements, processing event requests and approvals, and tracking participant check-ins and attendance with certificate issuance. The module accommodates conferences and symposiums, training events and workshops, public hearings and town halls, festivals and community events, board meetings and governance sessions, webinars and virtual events, and hybrid event formats combining in-person and virtual participation.
+The **Event Management** module enables organizations to plan, organize, and execute events of all types and scales. The module supports defining events with classification and scheduling, managing participant registration and tracking across multiple roles, organizing sessions into thematic tracks with time blocks and locations, capturing presentation and exhibition submissions with review workflows, coordinating event sponsors and partnership arrangements, processing event requests and approvals, and tracking participant check-ins and attendance with certificate issuance. The module accommodates conferences and symposiums, training events and workshops, public hearings and town halls, festivals and community events, board meetings and governance sessions, webinars and virtual events, and hybrid event formats combining in-person and virtual participation.
 
 Typical use cases include conference and symposium management, training program coordination, public engagement and community outreach events, stakeholder meetings and town halls, professional development workshops, virtual and hybrid event execution, sponsor and exhibitor coordination, and continuing education credit tracking.
 
 ## Using the Module
 
-The module provides a data model to support event lifecycle management from planning through execution and follow-up. **Event Request** records can capture proposed or requested events prior to formal approval with request details, requestor information, proposed dates and locations, event purpose, expected attendance, budget estimates, and approval workflow for intake and evaluation before official event creation.
+The module supports event lifecycle management from planning through execution and follow-up. Users can create **Event Request** records to capture proposed or requested events prior to formal approval with request details, requestor information, proposed dates and locations, event purpose, expected attendance, budget estimates, and approval workflow for intake and evaluation before official event creation.
 
 **Event** records serve as the primary entity defining planned occurrences with event titles, **Event Type** classifications (conference, training, public hearing, webinar, festival, meeting, workshop), event codes, event formats (in-person, virtual, hybrid), descriptions, start and end dates/times, primary locations, decision status, expected and actual attendee counts, event status throughout the lifecycle (draft, planning, open for registration, registration closed, in progress, completed, cancelled, postponed), and ownership assignments. Events can be organized into **Event Track** records representing thematic or organizational groupings—technology, policy, community outreach, breakout topics—with hierarchical track relationships enabling nested track structures for complex events.
 
