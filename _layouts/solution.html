@@ -149,7 +149,7 @@ layout: default
                 {% comment %} Auto-generate download URL from module title (hyphenated) and version {% endcomment %}
                 {% assign hyphenated_title = page.title | replace: ' ', '-' %}
                 {% assign release_tag = page.slug | append: '%2F' | append: page.latest_release %}
-                {% assign filename = 'App-Base-' | append: hyphenated_title | append: '-' | append: page.latest_release | append: '.zip' %}
+                {% assign filename = 'App-Base-' | append: hyphenated_title | append: '-Managed-' | append: page.latest_release | append: '.zip' %}
                 {% assign download_url = 'https://github.com/microsoft/industry-apps/releases/download/' | append: release_tag | append: '/' | append: filename %}
                 <a class="usa-button" href="{{ download_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% endif %}

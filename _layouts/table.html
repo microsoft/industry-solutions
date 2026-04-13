@@ -84,7 +84,7 @@ layout: default
                 <a class="usa-button" href="{{ parent_item.release_url }}" download>Download Latest Release ({{ parent_item.latest_release }})</a>
               {% else %}
                 {% assign raw_base = 'https://github.com/microsoft/gov-apptemplates/raw/main/' %}
-                <a class="usa-button" href="{{ raw_base }}modules/{{ parent_item.slug }}/releases/{{ parent_item.latest_release }}/MS-Gov-{{ parent_item.slug | capitalize }}-{{ parent_item.latest_release }}.zip" download>Download Latest Release ({{ parent_item.latest_release }})</a>
+                <a class="usa-button" href="{{ raw_base }}modules/{{ parent_item.slug }}/releases/{{ parent_item.latest_release }}/MS-Gov-{{ parent_item.slug | capitalize }}-Managed-{{ parent_item.latest_release }}.zip" download>Download Latest Release ({{ parent_item.latest_release }})</a>
               {% endif %}
             {% endif %}
 
