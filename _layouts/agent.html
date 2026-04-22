@@ -10,7 +10,7 @@ layout: default
       <!-- Sidebar navigation -->
 
       <aside class="grid-col-12 tablet:grid-col-3">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} module image" class="page-thumbnail">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} agent image" class="page-thumbnail">
         <br />
         {% if page.description %}
           <div class="usa-prose margin-bottom-2">
@@ -18,25 +18,8 @@ layout: default
           </div>
         {% endif %}
         
-        {%- comment -%}
-          Show the View ERD button if a mermaid code block is present in the content (from a fenced code block),
-          not just if a specific section header or div is present.
-        {%- endcomment -%}
-        {% assign mermaid_block = page.content | split:'<pre><code class="language-mermaid">' | last | split:'</code></pre>' | first %}
-        {% if mermaid_block != page.content %}
-          <p class="margin-top-2">
-            <button
-              type="button"
-              class="usa-button usa-button--primary open-erd-modal"
-              style="width: 100%"
-              data-erd-slug="{{ page.slug }}">
-              View ERD
-            </button>
-          </p>
-        {% endif %}
-        
         <nav class="sidenav-sticky" aria-label="Section navigation">
-          {% include sidenav.html %}
+          {% include agent-sidenav.html %}
         </nav>
       </aside>
 
@@ -61,7 +44,7 @@ layout: default
 
             {% include tabs.html
             ns=page.slug
-            tabs="Overview:overview|Screenshots:screenshots|Data Model:erd|Sample Data:sample-data|How-to / Guides:guides"
+            tabs="Overview:overview|Screenshots:screenshots"
             %}
 
             <!-- OVERVIEW panel -->
@@ -70,96 +53,43 @@ layout: default
               {{ content }}
             </section>
 
-            <!-- ERD panel -->
-            <section id="panel-{{ page.slug }}-erd" class="mgat-subnav__panel usa-prose" role="tabpanel"
-              data-panel="{{ page.slug }}">
-              
-              {%- comment -%}
-                Extract the first Mermaid code block from the page content (from a fenced code block),
-                and use it for both the modal and the diagram. This allows authors to use regular
-                ```mermaid fenced code blocks in markdown, with no front matter or data-raw needed.
-              {%- endcomment -%}
-              {% assign mermaid_block = content | split:'<pre><code class="language-mermaid">' | last | split:'</code></pre>' | first %}
-              {% if mermaid_block != content %}
-                <textarea id="erd-mermaid-{{ page.slug }}" style="display:none;">{{ mermaid_block | strip }}</textarea>
-              {% endif %}
-
-              {% comment %} Find and display the data model page for this module {% endcomment %}
-              {% assign data_model_page = site.tables | where: "module", page.slug | first %}
-              {% if data_model_page %}
-                {{ data_model_page.content | markdownify }}
-              {% else %}
-                <p>Data model documentation is being developed for this module.</p>
-              {% endif %}
-            </section>
-
             <!-- SCREENSHOTS panel -->
             <section id="panel-{{ page.slug }}-screenshots" class="mgat-subnav__panel usa-prose" role="tabpanel"
               data-panel="{{ page.slug }}">
-              {% assign screenshot_file = '/assets/modules/' | append: page.slug | append: '/overview.png' %}
+              {% assign screenshot_file = '/assets/agents/' | append: page.slug | append: '/sample.png' %}
               {% assign screenshot_exists = site.static_files | where: "path", screenshot_file | first %}
               {% if screenshot_exists %}
                 <img src="{{ screenshot_file | relative_url }}" 
-                     alt="{{ page.title }} module screenshot" 
+                     alt="{{ page.title }} agent screenshot" 
                      class="module-screenshot-thumbnail"
                      data-screenshot="{{ screenshot_file | relative_url }}"
                      style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;" 
                      title="Click to enlarge" />
                 <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #71767a;"><em>Note: All data shown in screenshots is fictitious and for demonstration purposes only.</em></p>
               {% else %}
-                <p>Screenshots are being developed for this module. Check back soon for visual previews of the module interface.</p>
+                <p>Screenshots are being developed for this agent. Check back soon for visual previews of the agent interface.</p>
               {% endif %}
-            </section>
-
-            <!-- SAMPLE DATA panel -->
-            <section id="panel-{{ page.slug }}-sample-data" class="mgat-subnav__panel usa-prose" role="tabpanel"
-              data-panel="{{ page.slug }}">
-              {% if page.sample_data and page.module_category %}
-                <p>Use the <a href="https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/data" target="_blank" rel="noopener noreferrer">pac data CLI command</a> or the <a href="https://learn.microsoft.com/en-us/power-platform/admin/manage-configuration-data" target="_blank" rel="noopener noreferrer">Configuration Migration tool</a> to import sample data into your environment.</p>
-                
-                {% for sample in page.sample_data %}
-                  {% assign sample_url = 'https://github.com/microsoft/industry-apps/tree/main/' | append: page.module_category | append: '/' | append: page.slug | append: '/sample-data/' | append: sample.filename %}
-                  <div style="margin-bottom: 2rem;">
-                    <h3 style="margin-bottom: 0.5rem;">
-                      📦 <a href="{{ sample_url }}" target="_blank" rel="noopener noreferrer">{{ sample.name }}</a>
-                    </h3>
-                    {% if sample.description %}
-                      <p style="margin-top: 0.5rem; color: #565c65;">{{ sample.description }}</p>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              {% else %}
-                <p>Sample data files are being prepared for this module. Check back soon for downloadable datasets to help you get started.</p>
-              {% endif %}
-            </section>
-
-            <!-- GUIDES panel -->
-            <section id="panel-{{ page.slug }}-guides" class="mgat-subnav__panel usa-prose" role="tabpanel"
-              data-panel="{{ page.slug }}">
-              {% include doclist.html %}
             </section>
           </div>
 
-          <!-- Small right column (download + personas) -->
+          <!-- Small right column (download + related items) -->
           <div class="grid-col-12 tablet:grid-col-3">
             {% if page.latest_release %}
               {% if page.release_url %}
                 <a class="usa-button" href="{{ page.release_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% else %}
-                {% comment %} Auto-generate download URL from module title (hyphenated) and version {% endcomment %}
+                {% comment %} Auto-generate download URL from agent title (hyphenated) and version - using industry-agents repo {% endcomment %}
                 {% assign hyphenated_title = page.title | replace: ' ', '-' %}
                 {% assign release_tag = page.slug | append: '%2F' | append: page.latest_release %}
                 {% assign filename = 'App-Base-' | append: hyphenated_title | append: '-Managed-' | append: page.latest_release | append: '.zip' %}
-                {% assign download_url = 'https://github.com/microsoft/industry-apps/releases/download/' | append: release_tag | append: '/' | append: filename %}
+                {% assign download_url = 'https://github.com/microsoft/industry-agents/releases/download/' | append: release_tag | append: '/' | append: filename %}
                 <a class="usa-button" href="{{ download_url }}" download>Download Latest Release ({{ page.latest_release }})</a>
               {% endif %}
             {% endif %}
 
             {% include related-items.html to="modules" %}
-            {% include related-items.html to="data_models" %}
             {% include related-items.html to="use_cases" %}
             {% include related-items.html to="personas" %}
-            {% include related-items.html to="agents" %}
 
             {% if page.contributors %}
               <div class="usa-prose margin-top-3">
@@ -181,22 +111,6 @@ layout: default
       </main>
     </div>
 </section>
-
-{% comment %} ERD modal (injected per-page) {% endcomment %}
-<div id="erd-modal-{{ page.slug }}" class="erd-modal" aria-hidden="true" role="dialog" aria-labelledby="erd-modal-title-{{ page.slug }}" tabindex="-1">
-  <div class="erd-modal__backdrop" data-close="true"></div>
-  <div class="erd-modal__dialog" role="document">
-    <header class="erd-modal__header">
-      <h2 id="erd-modal-title-{{ page.slug }}">ERD — {{ page.title }}</h2>
-      <button class="erd-modal__close" aria-label="Close ERD" data-close="true">&times;</button>
-    </header>
-    <div class="erd-modal__content">
-      <div class="erd-modal__inner">Loading…</div>
-    </div>
-  </div>
-</div>
-
-<script src="{{ '/assets/js/erd-modal.js' | relative_url }}" defer></script>
 
 {% comment %} Screenshot modal {% endcomment %}
 <div id="screenshot-modal" class="erd-modal" aria-hidden="true" role="dialog" aria-labelledby="screenshot-modal-title" tabindex="-1" style="display: none;">
@@ -240,11 +154,11 @@ layout: default
     const thumbnails = document.querySelectorAll('.module-screenshot-thumbnail');
     thumbnails.forEach(function(thumb) {
       thumb.addEventListener('click', function() {
-        openScreenshotModal(this.dataset.screenshot || this.src, this.alt);
+        openScreenshotModal(this.dataset.screenshot, this.alt);
       });
     });
     
-    // Close on Escape key
+    // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeScreenshotModal();

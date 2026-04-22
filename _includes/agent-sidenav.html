@@ -1,0 +1,18 @@
+{%- comment -%}
+  USWDS Side Navigation for AI Agents (dynamic)
+  - Uses .usa-sidenav markup
+  - Highlights current page with .usa-current on the <a>
+{%- endcomment -%}
+
+<ul class="usa-sidenav">
+  {%- assign agents = site.agents | sort: "title" -%}
+  {%- for agent in agents -%}
+    <li class="usa-sidenav__item">
+      <a
+        href="{{ agent.url | relative_url }}"
+        class="{% if agent.url == page.url %}usa-current{% endif %}">
+        {{ agent.title }}
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

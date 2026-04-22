@@ -36,6 +36,11 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_use_cases' -%}
       {%- assign heading = 'Related Portals' -%}
       {%- assign icon = '🌐' -%}
+    {%- elsif to_coll == 'agents' -%}
+      {%- assign page_field = 'related_agents' -%}
+      {%- assign target_field = 'related_use_cases' -%}
+      {%- assign heading = 'Related Agents' -%}
+      {%- assign icon = '🤖' -%}
     {%- endif -%}
 
   {%- elsif from_coll == 'personas' -%}
@@ -59,6 +64,11 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_personas' -%}
       {%- assign heading = 'Related Portals' -%}
       {%- assign icon = '🌐' -%}
+    {%- elsif to_coll == 'agents' -%}
+      {%- assign page_field = 'related_agents' -%}
+      {%- assign target_field = 'related_personas' -%}
+      {%- assign heading = 'Related Agents' -%}
+      {%- assign icon = '🤖' -%}
     {%- endif -%}
 
   {%- elsif from_coll == 'data_models' -%}
@@ -115,6 +125,11 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_modules' -%}
       {%- assign heading = 'Related Portals' -%}
       {%- assign icon = '🌐' -%}
+    {%- elsif to_coll == 'agents' -%}
+      {%- assign page_field = 'related_agents' -%}
+      {%- assign target_field = 'required_modules' -%}
+      {%- assign heading = 'Related Agents' -%}
+      {%- assign icon = '🤖' -%}
     {%- endif -%}
 
   {%- elsif from_coll == 'portals' -%}
@@ -143,6 +158,24 @@ Usage: {% include related-items.html to="personas" %}
       {%- assign target_field = 'related_portals' -%}
       {%- assign heading = 'Related Modules' -%}
       {%- assign icon = '🧰' -%}
+    {%- endif -%}
+
+  {%- elsif from_coll == 'agents' -%}
+    {%- if to_coll == 'modules' -%}
+      {%- assign page_field = 'required_modules' -%}
+      {%- assign target_field = 'related_agents' -%}
+      {%- assign heading = 'Required Modules' -%}
+      {%- assign icon = '🧰' -%}
+    {%- elsif to_coll == 'use_cases' -%}
+      {%- assign page_field = 'related_use_cases' -%}
+      {%- assign target_field = 'related_agents' -%}
+      {%- assign heading = 'Related Use Cases' -%}
+      {%- assign icon = '💡' -%}
+    {%- elsif to_coll == 'personas' -%}
+      {%- assign page_field = 'related_personas' -%}
+      {%- assign target_field = 'related_agents' -%}
+      {%- assign heading = 'Related Personas' -%}
+      {%- assign icon = '👤' -%}
     {%- endif -%}
   {%- endif -%}
 
