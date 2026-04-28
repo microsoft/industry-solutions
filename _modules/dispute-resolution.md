@@ -1,7 +1,7 @@
 ---
 title: "Dispute Resolution"
 description: "Manage internal complaints, grievances, and disputes with structured intake, investigation, mediation, determination, and appeal processes."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/dispute-resolution.png
 module_category: workforce
 required_modules:
@@ -10,6 +10,10 @@ required_data_models:
   - dispute-resolution
 related_use_cases: []
 related_personas: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample dispute resolution data including complaints, grievances, investigations, mediation sessions, determinations, appeals, and corrective actions.
 ---
 
 The **Dispute Resolution** module enables organizations to manage internal complaints, grievances, and disputes from initial intake through investigation, mediation, determination, and appeals. The module supports documenting dispute allegations and parties, conducting investigations with evidence and interview tracking, facilitating mediation and alternative dispute resolution, analyzing issues and making formal determinations with findings, tracking corrective actions and remediation, processing appeals of determinations, and managing referrals to internal or external authorities. The module supports employee grievances and workplace disputes, vendor and contractor disputes, customer complaints requiring investigation, internal policy violations, ethics concerns, discrimination or harassment complaints, labor relations matters, and alternative dispute resolution programs with full audit trails and confidentiality controls.
