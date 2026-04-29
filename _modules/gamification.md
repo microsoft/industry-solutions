@@ -10,6 +10,10 @@ required_data_models:
   - gamification
 related_use_cases: []
 related_personas: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample gamification data including games, activities, achievements, participants, activity instances, and achievement grants for engagement tracking.
 ---
 
 The **Gamification** module enables organizations to encourage, track, and recognize desired behaviors across programs, teams, and initiatives. The module supports defining games as time-bound or ongoing engagement initiatives, configuring activities that represent measurable actions, establishing achievements that participants can earn based on participation or performance, enrolling participants with individual or team participation models, logging activity instances as participants perform actions, and granting achievement recognition when criteria are met. The module can reinforce training completion, safety compliance, case resolution timeliness, volunteer engagement, productivity milestones, wellness initiatives, community participation, or internal innovation efforts, providing a flexible behavioral reinforcement layer that can operate alongside workforce, compliance, training, service delivery, or operational modules.

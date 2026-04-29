@@ -10,6 +10,10 @@ required_data_models:
   - hr-benefits
 related_use_cases: []
 related_personas: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample HR benefits data including benefit plans, providers, eligibility rules, enrollment periods, benefit enrollments, life events, contribution rates, and beneficiary designations.
 contributors:
   - name: Pallavi Bondre
     url: https://www.linkedin.com/in/pallavi-bondre/
