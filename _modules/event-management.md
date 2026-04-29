@@ -10,6 +10,10 @@ required_data_models:
   - event-management
 related_use_cases: []
 related_personas: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample event management data including events, participant registrations, session schedules, tracks, presentations, sponsorships, and attendance tracking.
 ---
 
 The **Event Management** module enables organizations to plan, organize, and execute events of all types and scales. The module supports defining events with classification and scheduling, managing participant registration and tracking across multiple roles, organizing sessions into thematic tracks with time blocks and locations, capturing presentation and exhibition submissions with review workflows, coordinating event sponsors and partnership arrangements, processing event requests and approvals, and tracking participant check-ins and attendance with certificate issuance. The module accommodates conferences and symposiums, training events and workshops, public hearings and town halls, festivals and community events, board meetings and governance sessions, webinars and virtual events, and hybrid event formats combining in-person and virtual participation.
