@@ -10,6 +10,10 @@ required_data_models:
   - financial-management
 related_use_cases: []
 related_personas: []
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample financial management data including budgets, funding sources, requisitions, procurement processes, contracts, purchase orders, commitments, and payment transactions.
 ---
 
 The **Financial Management** module enables organizations to manage end-to-end financial planning, procurement, contractual oversight, and financial execution. The module supports defining budgets and funding sources, validating availability of funds, managing procurement processes from requisition through competitive sourcing, formalizing agreements through contracts and amendments, issuing purchase orders against contracts, recording financial commitments to reserve funds, and processing payments to suppliers with invoice tracking. The module enables departmental budget control, competitive sourcing and vendor selection, contract lifecycle management, project or grant-funded spending, compliance-driven funds certification, structured payment tracking, and complete financial traceability from initial request through contract award to final payment for financial accountability, operational transparency, and audit readiness.
