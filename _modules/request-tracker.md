@@ -12,6 +12,10 @@ related_use_cases:
   - Request Tracker
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample request tracker data including requests, request types, priorities, assignments, status tracking, and completion records across various request categories.
 ---
 
 The **Request Tracker module** provides a lightweight, centralized system for teams or divisions to intake, triage, assign, and track cross-organizational or external requests. It serves as a flexible front door for handling data pulls, access requests, policy questions, document reviews, partner inquiries, leadership taskings, service coordination requests, or general assistance requests without the overhead of a full case management system.

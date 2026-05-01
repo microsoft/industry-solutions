@@ -12,6 +12,10 @@ related_use_cases:
   - Project Tracking
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample project tracking data including projects, project proposals, backlogs, iterations, work items, milestones, resource assignments, and change requests.
 ---
 
 The **Project Tracking module** supports the structured intake, planning, execution, and control of work across initiatives of any size. It enables organizations to capture proposed work, formally manage approved projects, plan delivery using backlogs and iterations, and execute work through categorized work items aligned to defined roles and resource assignments.

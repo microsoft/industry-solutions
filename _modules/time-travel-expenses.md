@@ -12,6 +12,10 @@ related_use_cases:
   - Time, Travel, and Expenses
 related_personas:
   - hr-administrator
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample time, travel, and expenses data including time entries, availability planning, travel requests, itineraries, expense reports, and reimbursement tracking.
 ---
 
 The **Time, Travel, and Expenses module** provides a unified structure for capturing time worked, planning personnel availability, authorizing travel, and submitting reimbursable expenses. It enables individuals to record time against standardized time codes, plan future availability, request and manage travel with detailed itineraries, and submit costs through categorized expense reports.

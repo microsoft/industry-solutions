@@ -12,6 +12,10 @@ related_use_cases:
   - Operational Excellence
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample operational excellence data including incidents, inspections, exercises, readiness assessments, findings, recommendations, corrective actions, and operational impacts.
 ---
 
 The **Operational Excellence module** provides a structured framework for managing incidents, inspections, exercises, readiness assessments, findings, recommendations, and operational impacts. It supports both reactive scenarios such as investigating service disruptions and proactive activities like conducting inspections, running training exercises, and evaluating mission readiness.

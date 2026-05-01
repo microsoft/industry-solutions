@@ -12,6 +12,10 @@ related_use_cases:
   - Programs and Services
 related_personas:
   - hr-administrator
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample programs and services data including programs, services, eligibility criteria, participant enrollments, service delivery records, and outcome tracking.
 ---
 
 The **Programs and Services module** provides a structured framework for defining what an organization offers, configuring eligibility, tracking participation, and documenting service delivery outcomes. It separates strategic structure from eligibility configuration and operational execution, enabling consistent service design and delivery across contexts.

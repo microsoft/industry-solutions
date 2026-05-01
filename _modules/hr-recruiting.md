@@ -12,6 +12,10 @@ related_use_cases:
   - Recruiting and Onboarding
 related_personas:
   - hr-administrator
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample HR recruiting data including job requisitions, candidates, applications, interview schedules, evaluations, selections, and offer management.
 contributors:
   - name: Tim Hanewich
     url: https://TimHanewich.github.io

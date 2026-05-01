@@ -12,6 +12,10 @@ related_use_cases:
   - IT Service Management
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample IT service management data including service offerings, access requests, system inventory, technology standards, compliance requirements, and service delivery tracking.
 ---
 
 The **IT Service Management module** provides a structured framework for managing IT service offerings, access control, system inventory, technology standards, and compliance oversight. It balances day-to-day service delivery with architectural visibility and security governance, suitable for public sector and commercial organizations requiring lightweight ITSM capabilities combined with structured system and technology management.

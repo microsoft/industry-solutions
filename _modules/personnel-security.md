@@ -12,6 +12,10 @@ related_use_cases:
   - Personnel Security
 related_personas:
   - chief-information-officer
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample personnel security data including security reviews, background investigations, adjudications, eligibility determinations, credentials, continuous evaluation, and reportable events.
 ---
 
 The **Personnel Security module** manages the lifecycle of evaluating, granting, monitoring, and enforcing trust-based access for individuals within an organization. It supports formal security reviews, background investigations, adjudication decisions, eligibility determinations, and ongoing oversight through continuous evaluation and reportable event tracking.

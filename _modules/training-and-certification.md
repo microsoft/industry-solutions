@@ -12,6 +12,10 @@ related_use_cases:
   - Training and Certification
 related_personas:
   - hr-administrator
+sample_data:
+  - filename: data.zip
+    name: Sample Data
+    description: Sample training and certification data including courses, curricula, learning paths, academic programs, enrollments, completions, certificates, and qualification requirements.
 ---
 
 The **Training and Certification module** provides a comprehensive framework for managing learning delivery, academic programs, credentialing, and eligibility requirements. It supports defining training courses, organizing curricula through learning paths and academic programs, tracking enrollments and completions, awarding certificates with lifecycle management, and enforcing qualification requirements for roles, access privileges, or operational activities.
