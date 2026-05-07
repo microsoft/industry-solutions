@@ -29,9 +29,10 @@ layout: default
             <article class="post">
               <header class="post-header margin-bottom-2">
                 <h1 class="usa-prose__heading">{{ page.title }}</h1>
-                <p class="text-base-italic">{% if page.date %}{{ page.date | date: "%B %-d, %Y" }}{% endif %}</p>
+                <hr />
+                <p class="text-base-italic">{% if page.date %}📅 {{ page.date | date: "%A, %B %-d, %Y" }}{% endif %}</p>
                 {% if page.author %}
-                <p class="text-small">By {{ page.author }}</p>
+                <p class="text-small">✍️ {{ page.author }}</p>
                 {% endif %}
               </header>
 
