@@ -38,16 +38,6 @@
     </main>
 
     <footer class="usa-footer">
-
-        <!-- Full-bleed background row; inner .container keeps content aligned with header/identifier -->
-        <div class="usa-footer__secondary-fullwidth">
-            <div class="container">
-                <div class="usa-footer__secondary-section">
-                    <p class="usa-footer__copyright">&copy; {{ site.time | date: '%Y' }} Microsoft Corporation. Licensed
-                        under the <a href="{{ '/LICENSE' | relative_url }}">MIT License</a>.</p>
-                </div>
-            </div>
-        </div>
     </footer>
 
     <!-- Identifier section with Microsoft branding -->
@@ -58,7 +48,7 @@
                     <img class="site-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }} logo">
                 </a>
                 <section class="usa-identifier__identity" aria-label="Site identity">
-                    <p class="usa-identifier__tagline">An open-source project maintained by Microsoft. 
+                    <p class="usa-identifier__tagline">An open-source <a href="{{ '/LICENSE' | relative_url }}">MIT License</a> project maintained by Microsoft. 
                         <a href="https://opensource.microsoft.com/" target="_blank" rel="noopener">Open Source at Microsoft</a>
                     </p>
                 </section>
