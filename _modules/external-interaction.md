@@ -1,7 +1,7 @@
 ---
 title: "External Interaction"
 description: "Structured tracking of incoming communications and engagements from external parties across multiple contact channels with routing, assignment, and resolution management."
-latest_release: v1.1.0.0
+latest_release: v1.1.1.0
 thumbnail: /assets/use_cases/external-interaction.png
 module_category: external-engagement
 required_modules:

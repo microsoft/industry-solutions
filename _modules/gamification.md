@@ -1,7 +1,7 @@
 ---
 title: "Gamification"
 description: "Drive engagement and recognize desired behaviors with structured games, trackable activities, achievement systems, and participant progress tracking."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/gamification.png
 module_category: workforce
 required_modules:

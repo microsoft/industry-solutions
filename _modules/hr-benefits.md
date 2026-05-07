@@ -1,7 +1,7 @@
 ---
 title: "HR Benefits"
 description: "Manage employee benefit plans, enrollment, life events, beneficiaries, contribution rates, and cost allocation with comprehensive benefits administration."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/hr-benefits.png
 module_category: workforce
 required_modules:

@@ -1,7 +1,7 @@
 ---
 title: "Project Tracking"
 description: "Manage the structured intake, planning, execution, and control of work across initiatives with backlogs, iterations, work items, milestones, and change management."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/project-tracking.png"
 module_category: operations
 required_modules:

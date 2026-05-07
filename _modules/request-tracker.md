@@ -1,7 +1,7 @@
 ---
 title: "Request Tracker"
 description: "Provide a lightweight, centralized system for intaking, triaging, assigning, and tracking cross-organizational or external requests from submission through completion."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/request-tracking.png"
 module_category: operations
 required_modules:

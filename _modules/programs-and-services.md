@@ -1,7 +1,7 @@
 ---
 title: "Programs and Services"
 description: "Define what your organization offers, configure eligibility, track participation, and document service delivery outcomes with structured program and service management."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/programs-and-services.png"
 module_category: external-engagement
 required_modules:

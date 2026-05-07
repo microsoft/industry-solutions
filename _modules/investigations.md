@@ -1,7 +1,7 @@
 ---
 title: "Investigations"
 description: "Manage formal investigations from intake through resolution with comprehensive case tracking, evidence chain-of-custody, interview documentation, and corrective action monitoring."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/investigations.png
 module_category: compliance-security
 required_modules:

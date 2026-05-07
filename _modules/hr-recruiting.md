@@ -1,7 +1,7 @@
 ---
 title: "HR Recruiting"
 description: "Manage the end-to-end hiring lifecycle from workforce planning through candidate selection and offer management."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/hr-recruiting.png"
 module_category: workforce
 required_modules:

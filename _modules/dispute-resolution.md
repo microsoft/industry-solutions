@@ -1,7 +1,7 @@
 ---
 title: "Dispute Resolution"
 description: "Manage internal complaints, grievances, and disputes with structured intake, investigation, mediation, determination, and appeal processes."
-latest_release: v1.2.1.0
+latest_release: v1.2.2.0
 thumbnail: /assets/use_cases/dispute-resolution.png
 module_category: workforce
 required_modules:

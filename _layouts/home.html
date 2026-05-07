@@ -43,7 +43,44 @@ layout: default
         </div>
 
         <div class="grid-col-12 tablet:grid-col-6">
-            <h2 class="site-preview-heading">Getting Started</h2>
+
+            <div class="margin-bottom-3 hero-box">
+                <img src="{{ '/assets/site-logo.png' | relative_url }}" alt="FAST Modules"
+                    style="display: block; max-width: 140px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
+                <div class="hero-box-text">
+                    <div>Flexible</div>
+                    <div>Foundational</div>
+                    <div>Frontier</div>
+                </div>
+            </div>
+
+            <h2 class="site-preview-heading">🌟 What's New</h2>
+            
+            {% assign recent_posts = site.posts | slice: 0, 2 %}
+            <div style="background: #e8f6f8; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <ul class="usa-list usa-list--unstyled" style="margin: 0;">
+                    {% for post in recent_posts %}
+                    <li style="{% unless forloop.last %}margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1);{% endunless %}">
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem;">
+                            <span style="color: #ffd700; font-size: 1rem;">✨</span>
+                            <h4 style="margin: 0; flex: 1;">
+                                <a href="{{ post.url | relative_url }}" style="color: black; text-decoration: none; font-weight: 600; font-size: 1rem; line-height: 1.4;">{{ post.title }}</a>
+                            </h4>
+                        </div>
+                        <p style="margin: 0; font-size: 0.8125rem; color: black; padding-left: 1.5rem;">
+                            {{ post.date | date: "%b %d, %Y" }}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div style="margin-top: 1rem; text-align: right;">
+                    <a href="{{ '/blog/' | relative_url }}" style="color: black; text-decoration: none; font-weight: 600; font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.25rem;">
+                        View all posts <span style="font-size: 1rem;">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="site-preview-heading">⚡ Getting Started</h2>
             
             <div class="usa-alert usa-alert--info margin-bottom-2">
                 <div class="usa-alert__body">
@@ -51,17 +88,6 @@ layout: default
                     <p class="usa-alert__text">
                         Check out our <a href="{{ '/articles/getting-started-guide' | relative_url }}">Getting Started Guide</a> for detailed setup instructions and best practices.
                     </p>
-                </div>
-            </div>
-
-            <div class="margin-bottom-3 hero-box">
-                <img src="{{ '/assets/site-logo.png' | relative_url }}" 
-                     alt="FAST Modules" 
-                     style="display: block; max-width: 180px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
-                <div class="hero-box-text">
-                    <div>Flexible</div>
-                    <div>Modular</div>
-                    <div>AI-Ready</div>
                 </div>
             </div>
 

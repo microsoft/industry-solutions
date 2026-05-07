@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% comment %}Updated: Added Connections and Instructions tabs{% endcomment %}
 <section class="usa-section">
   <div class="grid-container-full">
 
@@ -42,9 +42,20 @@ layout: default
             <h1 class="mgat-solution-heading">{{ page.title }}</h1>
             <hr />
 
+            <!-- Legal disclaimer for agent templates -->
+            <div class="usa-alert usa-alert--info usa-alert--slim margin-bottom-3">
+              <div class="usa-alert__body">
+                <h4 class="usa-alert__heading">Important</h4>
+                <p class="usa-alert__text">
+                  You're responsible for assessing all safety and legal implications of using an agent template and customizing it as appropriate for your business.
+                  Organizations must assess specific legal and regulatory requirements when using agent templates, as they might not be suitable for all industries, scenarios, or use cases. Moreover, don't use AI services in ways prohibited by applicable terms of service and relevant codes of conduct.
+                </p>
+              </div>
+            </div>
+
             {% include tabs.html
             ns=page.slug
-            tabs="Overview:overview|Screenshots:screenshots"
+            tabs="Overview:overview|Screenshots:screenshots|Connections:connections|Instructions:instructions"
             %}
 
             <!-- OVERVIEW panel -->
@@ -68,6 +79,26 @@ layout: default
                 <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #71767a;"><em>Note: All data shown in screenshots is fictitious and for demonstration purposes only.</em></p>
               {% else %}
                 <p>Screenshots are being developed for this agent. Check back soon for visual previews of the agent interface.</p>
+              {% endif %}
+            </section>
+
+            <!-- CONNECTIONS panel -->
+            <section id="panel-{{ page.slug }}-connections" class="mgat-subnav__panel usa-prose" role="tabpanel"
+              data-panel="{{ page.slug }}">
+              {% if page.connections %}
+                {{ page.connections | markdownify }}
+              {% else %}
+                <p>Connection information for this agent is being developed. Check back soon for details on integrations and data sources.</p>
+              {% endif %}
+            </section>
+
+            <!-- INSTRUCTIONS panel -->
+            <section id="panel-{{ page.slug }}-instructions" class="mgat-subnav__panel usa-prose" role="tabpanel"
+              data-panel="{{ page.slug }}">
+              {% if page.instructions %}
+                {{ page.instructions | markdownify }}
+              {% else %}
+                <p>Detailed instructions for this agent are being developed. Check back soon for setup and configuration guidance.</p>
               {% endif %}
             </section>
           </div>

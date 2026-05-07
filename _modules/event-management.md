@@ -1,7 +1,7 @@
 ---
 title: "Event Management"
 description: "Plan, organize, and execute events with comprehensive registration, session scheduling, participant tracking, and sponsorship management."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: /assets/use_cases/event-management.png
 module_category: external-engagement
 required_modules:

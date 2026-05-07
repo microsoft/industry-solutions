@@ -1,7 +1,7 @@
 ---
 title: "Operational Excellence"
 description: "Manage incidents, inspections, exercises, readiness assessments, findings, and operational impacts within a unified governance framework."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/operational-excellence.png"
 module_category: operations
 required_modules:

@@ -1,7 +1,7 @@
 ---
 title: "Training and Certification"
 description: "Manage learning delivery, academic programs, credentialing, and qualification requirements across higher education, workforce development, and regulated industries."
-latest_release: v1.2.0.0
+latest_release: v1.2.1.0
 thumbnail: "assets/use_cases/training-and-certification.png"
 module_category: workforce
 required_modules:
